@@ -1,34 +1,31 @@
 package com.betpawa.wallet.repository;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "account")
-public class Account {
+@Table(name = "accounts")
+public class Account implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id", unique = true, nullable = false)
-    private Long accountId;
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
 
-    @Column(unique = true)
-    @NaturalId
+    @Column(name = "user_id", unique = true)
     private String userId;
 
-//    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Balance> balance = new HashSet <>();
 
-    public Long getAccountId() {
-        return accountId;
+    public Long getId() {
+        return id;
     }
 
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserId() {

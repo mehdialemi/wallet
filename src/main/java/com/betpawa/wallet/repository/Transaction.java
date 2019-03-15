@@ -3,15 +3,16 @@ package com.betpawa.wallet.repository;
 import com.betpawa.wallet.commons.Currency;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "transaction")
-public class Transaction {
+@Table(name = "transactions")
+public class Transaction implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
 
     @Column

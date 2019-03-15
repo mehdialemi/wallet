@@ -15,6 +15,17 @@ import java.util.Date;
 
 public class AccountService {
 
+    public void newAccount(String userId) {
+        validateOrThrowRunnable(userId);
+
+        try(MySession mySession = MySession.newSession()) {
+            Session session = mySession.openSession();
+            Account account = new Account();
+            account.setUserId(userId);
+            session.save(account);
+        }
+    }
+
     public void withdraw(WithdrawRequest request) throws InSufficientFundException {
         validateOrThrowRunnable(request.getUserId(), request.getAmount(), request.getCurrency());
 
@@ -29,7 +40,6 @@ public class AccountService {
                 throw new InSufficientFundException();
 
             balance.setAmount(balance.getAmount() - request.getAmount());
-//            balance.setAccount(account);
 
             Transaction transaction = new Transaction();
             transaction.setAmount(request.getAmount());
@@ -38,12 +48,11 @@ public class AccountService {
             transaction.setDate(new Date());
             transaction.setBalance(balance);
 
-            session.save(account);
             session.save(balance);
+            session.save(account);
             session.save(transaction);
         } // Finally, commit the transaction and close the session
     }
-
 
     public void deposit(DepositRequest request) {
         validateOrThrowRunnable(request.getUserId(), request.getAmount(), request.getCurrency());
@@ -55,7 +64,6 @@ public class AccountService {
             Account account = getAccount(request.getUserId(), session);
             Balance balance = getCurrencyBalance(account, request.getCurrency());
             balance.setAmount(balance.getAmount() + request.getAmount());
-//            balance.setAccount(account);
 
             Transaction transaction = new Transaction();
             transaction.setAmount(request.getAmount());
@@ -64,8 +72,8 @@ public class AccountService {
             transaction.setDate(new Date());
             transaction.setBalance(balance);
 
-            session.save(account);
             session.save(balance);
+            session.save(account);
             session.save(transaction);
         } // Finally, commit the transaction and close the session
     }
@@ -87,16 +95,18 @@ public class AccountService {
     private Account getAccount(String userId, Session session) {
         @SuppressWarnings("JpaQlInspection") Object result = session
                 .createQuery("from Account where userId=:userId")
-                .setParameter("userId", userId).uniqueResult();
+                .setParameter("userId", userId)
+                .setFetchSize(1)
+                .uniqueResult();
 
         Account account;
         if (result == null) {
-            account = new Account();
-            account.setUserId(userId);
+                account = new Account();
+                account.setUserId(userId);
+                session.save(account);
         } else {
             account = (Account) result;
         }
-
         return account;
     }
 

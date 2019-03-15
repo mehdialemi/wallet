@@ -5,9 +5,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.util.ArrayList;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.List;
+import java.util.concurrent.*;
 
 public class WalletUser implements Closeable {
     private static final Logger logger = LoggerFactory.getLogger(WalletUser.class);
@@ -16,12 +15,15 @@ public class WalletUser implements Closeable {
     private final ExecutorService executorService;
     private final ArrayList <Callable<Boolean>> roundList;
     private String userId;
+    private final List <Future <Boolean>> futures = new ArrayList <>();
 
     public WalletUser(String server, int port, String userId, int threads, int threadRounds) {
         this.userId = userId;
         this.walletClient = new WalletClient(server, port);
         executorService = Executors.newFixedThreadPool(threads);
         roundList = new ArrayList <>();
+
+        walletClient.createAccount(userId);
 
         for (int thread = 0; thread < threads; thread++) {
             roundList.add(() -> {
@@ -33,11 +35,21 @@ public class WalletUser implements Closeable {
         }
     }
 
-    public void start() {
+    public void start() throws Exception {
         logger.info("Starting wallet client for userId: {}", userId);
         for (Callable <Boolean> callable : roundList) {
-            executorService.submit(callable);
+            futures.add(executorService.submit(callable));
         }
+    }
+
+    public void waitToComplete() throws Exception {
+        int success = 0;
+        int failed = 0;
+        for (Future <Boolean> future : futures) {
+            if (future.get()) success ++;
+            else failed ++;
+        }
+        logger.info("Round for userId {} is completed, success: {}, failed: {}", userId, success, failed);
     }
 
     @Override

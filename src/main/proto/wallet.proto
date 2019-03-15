@@ -10,6 +10,8 @@ package commons;
 // The wallet server will keep track  of a users monetary balance in the system.
 // The client will emulate users depositing and withdrawing funds.
 service WalletTransaction {
+
+    rpc createAccount (NewAccount) returns (Empty);
     // Deposit funds to the users wallet.
     rpc Deposit (DepositRequest) returns (Empty);
 
@@ -18,6 +20,10 @@ service WalletTransaction {
 
     // Get the users current balance.
     rpc Balance (BalanceRequest) returns (BalanceResponse);
+}
+
+message NewAccount {
+    string userId = 1;
 }
 
 // The request message containing the user's name.

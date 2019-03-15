@@ -41,6 +41,21 @@ public class WalletClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
+    public String createAccount(String userId) {
+        NewAccount account = NewAccount.newBuilder()
+                .setUserId(userId)
+                .build();
+
+        try {
+            blockingStub.createAccount(account);
+            return "ok";
+        } catch (StatusRuntimeException e) {
+            String msg = e.getStatus().getDescription();
+            logger.debug(msg);
+            return msg;
+        }
+    }
+
     public String deposit(String userId, double amount, Currency currency) {
 
         DepositRequest request = DepositRequest.newBuilder()
@@ -114,7 +129,7 @@ public class WalletClient {
             int port = SERVER_PORT;
 
             int numUsers = 100;
-            int numThreads = 100;
+            int numThreads = 10;
             int numRounds = 100;
 
             for (int i = 0; i < numUsers; i++) {
@@ -125,10 +140,16 @@ public class WalletClient {
                 walletUser.start();
             }
 
+            for (WalletUser walletUser : walletUsers) {
+                walletUser.waitToComplete();
+            }
+
         } finally {
             for (WalletUser walletUser : walletUsers) {
                 walletUser.close();
             }
+
+            logger.info("WalletClient is down");
         }
     }
 

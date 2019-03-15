@@ -2,10 +2,7 @@ package com.betpawa.wallet.services;
 
 import com.betpawa.wallet.commons.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.resource.transaction.spi.TransactionStatus;
 
-import javax.persistence.FlushModeType;
 import java.io.Closeable;
 
 /**
@@ -16,7 +13,6 @@ import java.io.Closeable;
 public class MySession implements Closeable {
 
     private Session session;
-
     private MySession() {}
 
     /**
@@ -25,7 +21,7 @@ public class MySession implements Closeable {
      * @return a new created session with begin transaction state
      */
     public Session openSession() {
-        session = HibernateUtil.getSessionFactory().openSession();
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         return session;
     }
@@ -36,12 +32,7 @@ public class MySession implements Closeable {
     @Override
     public void close() {
         if (session != null && session.isOpen()) {
-            Transaction transaction = session.getTransaction();
-            if (transaction.getStatus().isOneOf(TransactionStatus.ACTIVE))
-                transaction.commit();
-            else
-                transaction.rollback();
-
+            session.getTransaction().commit();
             session.close();
         }
     }

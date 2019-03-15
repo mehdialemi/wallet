@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.betpawa.wallet.commons";
+option java_outer_classname = "WalletProto";
+option objc_class_prefix = "WAL";
+
+package commons;
+
+// The wallet server will keep track  of a users monetary balance in the system.
+// The client will emulate users depositing and withdrawing funds.
+service WalletTransaction {
+    // Deposit funds to the users wallet.
+    rpc Deposit (DepositRequest) returns (Empty);
+
+    // Withdraw funds from the users wallet.
+    rpc Withdraw (WithdrawRequest) returns (Empty);
+
+    // Get the users current balance.
+    rpc Balance (BalanceRequest) returns (BalanceResponse);
+}
+
+// The request message containing the user's name.
+message DepositRequest {
+    string userId = 1;
+    double amount = 2;
+    Currency currency = 3;
+}
+
+message Empty {}
+
+message WithdrawRequest {
+    string userId = 1;
+    double amount = 2;
+    Currency currency = 3;
+}
+
+message BalanceRequest {
+    string userId = 1;
+}
+
+message BalanceResponse {
+    repeated BalanceResult results = 1;
+}
+
+message BalanceResult {
+    double amount = 1;
+    Currency currency = 2;
+}
+
+enum Currency {
+    EUR = 0;
+    USD = 1;
+    GBP = 2;
+}

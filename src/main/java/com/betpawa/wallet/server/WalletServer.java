@@ -2,6 +2,8 @@ package com.betpawa.wallet.server;
 
 import com.betpawa.wallet.commons.Constants;
 import com.betpawa.wallet.commons.HibernateUtil;
+import com.codahale.metrics.Meter;
+import com.codahale.metrics.MetricRegistry;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.slf4j.Logger;
@@ -18,9 +20,9 @@ public class WalletServer {
 
     private Server server;
 
-    private void start() throws IOException {
+    public void start(int port) throws IOException {
         /* The port on which the server should run */
-        server = ServerBuilder.forPort(Constants.SERVER_PORT)
+        server = ServerBuilder.forPort(port)
                 .addService(new WalletServerImpl())
                 .build()
                 .start();
@@ -40,7 +42,7 @@ public class WalletServer {
         }));
     }
 
-    private void stop() {
+    public void stop() {
         if (server != null) {
             server.shutdown();
         }
@@ -60,7 +62,7 @@ public class WalletServer {
      */
     public static void main(String[] args) throws IOException, InterruptedException {
         final WalletServer server = new WalletServer();
-        server.start();
+        server.start(Constants.SERVER_PORT);
         server.blockUntilShutdown();
     }
 }

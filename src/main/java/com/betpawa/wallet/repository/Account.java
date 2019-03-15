@@ -19,7 +19,8 @@ public class Account {
     @NaturalId
     private String userId;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+//    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Balance> balance = new HashSet <>();
 
     public Long getAccountId() {

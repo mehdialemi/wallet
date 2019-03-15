@@ -2,6 +2,8 @@ package com.betpawa.wallet.services;
 
 import com.betpawa.wallet.commons.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import javax.persistence.FlushModeType;
 import java.io.Closeable;
@@ -34,7 +36,12 @@ public class MySession implements Closeable {
     @Override
     public void close() {
         if (session != null && session.isOpen()) {
-            session.getTransaction().commit();
+            Transaction transaction = session.getTransaction();
+            if (transaction.getStatus().isOneOf(TransactionStatus.ACTIVE))
+                transaction.commit();
+            else
+                transaction.rollback();
+
             session.close();
         }
     }

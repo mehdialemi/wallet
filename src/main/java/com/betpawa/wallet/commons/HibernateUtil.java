@@ -25,6 +25,8 @@ public class HibernateUtil {
                 config.addAnnotatedClass(Account.class);
                 config.addAnnotatedClass(Balance.class);
                 config.addAnnotatedClass(Transaction.class);
+//                config.getProperties().put("hibernate.show_sql", "false");
+
                 logger.info("Hibernate config is loaded successfully");
 
                 registry = new StandardServiceRegistryBuilder()
@@ -35,7 +37,6 @@ public class HibernateUtil {
                         .build();
 
                 sessionFactory = config.buildSessionFactory();
-
                 logger.info("SessionFactory is created by StandardServiceRegistry");
 
             } catch (Exception e) {

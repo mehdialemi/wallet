@@ -22,12 +22,12 @@ public class Balance {
     @Column(nullable = false, length = 5)
     private Currency currency;
 
-    @OneToMany(mappedBy = "balance", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "balance", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Transaction> transactions = new HashSet <>();
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id", nullable = false)
-    private Account account;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "account_id", nullable = false)
+//    private Account account;
 
     public Long getBalanceId() {
         return balanceId;
@@ -60,12 +60,12 @@ public class Balance {
     public void setTransactions(Set <Transaction> transactions) {
         this.transactions = transactions;
     }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
+//
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 }

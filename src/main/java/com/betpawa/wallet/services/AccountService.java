@@ -29,10 +29,7 @@ public class AccountService {
                 throw new InSufficientFundException();
 
             balance.setAmount(balance.getAmount() - request.getAmount());
-            session.save(account);
-
-            balance.setAccount(account);
-            session.save(balance);
+//            balance.setAccount(account);
 
             Transaction transaction = new Transaction();
             transaction.setAmount(request.getAmount());
@@ -40,6 +37,9 @@ public class AccountService {
             transaction.setType(TransactionType.WITHDRAW);
             transaction.setDate(new Date());
             transaction.setBalance(balance);
+
+            session.save(account);
+            session.save(balance);
             session.save(transaction);
         } // Finally, commit the transaction and close the session
     }
@@ -55,11 +55,7 @@ public class AccountService {
             Account account = getAccount(request.getUserId(), session);
             Balance balance = getCurrencyBalance(account, request.getCurrency());
             balance.setAmount(balance.getAmount() + request.getAmount());
-
-            session.save(account);
-
-            balance.setAccount(account);
-            session.save(balance);
+//            balance.setAccount(account);
 
             Transaction transaction = new Transaction();
             transaction.setAmount(request.getAmount());
@@ -67,6 +63,9 @@ public class AccountService {
             transaction.setType(TransactionType.DEPOSIT);
             transaction.setDate(new Date());
             transaction.setBalance(balance);
+
+            session.save(account);
+            session.save(balance);
             session.save(transaction);
         } // Finally, commit the transaction and close the session
     }
@@ -119,6 +118,7 @@ public class AccountService {
         if (balance == null) {
             balance = new Balance();
             balance.setCurrency(currency);
+            account.getBalance().add(balance);
         }
 
         return balance;

@@ -11,7 +11,7 @@
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
-        <property name="connection.pool_size">1000</property>
+        <property name="connection.pool_size">500</property>
         <!-- Select our SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <!-- Echo the SQL to stdout -->
@@ -21,10 +21,10 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create-drop</property>
         <!-- dbcp connection pool configuration -->
-        <property name="hibernate.dbcp.initialSize">1000</property>
-        <property name="hibernate.dbcp.maxTotal">10000</property>
-        <property name="hibernate.dbcp.maxIdle">1000</property>
-        <property name="hibernate.dbcp.minIdle">200</property>
+        <property name="hibernate.dbcp.initialSize">500</property>
+        <property name="hibernate.dbcp.maxTotal">1000</property>
+        <property name="hibernate.dbcp.maxIdle">100</property>
+        <property name="hibernate.dbcp.minIdle">20</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <!--<mapping class="com.betpawa.wallet.repository.Account" />-->
         <!--<mapping class="com.betpawa.wallet.repository.Balance" />-->

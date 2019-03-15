@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+    }
+}
+
 plugins {
     // Provide convenience executables for trying out server and client
     id 'application'
@@ -28,6 +37,7 @@ dependencies {
     implementation "io.grpc:grpc-stub:${grpcVersion}"
     compileOnly "javax.annotation:javax.annotation-api:1.2"
     runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    compile "mysql:mysql-connector-java:8.0.15"
     compile "org.hibernate:hibernate-core:5.4.1.Final"
     compile "org.slf4j:slf4j-api:1.7.25"
     compile "ch.qos.logback:logback-classic:1.2.3"
@@ -62,14 +72,14 @@ sourceSets {
 startScripts.enabled = false
 
 task walletServer(type: CreateStartScripts) {
-    mainClassName = 'com.betpawa.wallet.WalletServer'
+    mainClassName = 'com.betpawa.wallet.server.WalletServer'
     applicationName = 'wallet-server'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath
 }
 
 task walletClient(type: CreateStartScripts) {
-    mainClassName = 'com.betpawa.wallet.WalletClient'
+    mainClassName = 'com.betpawa.wallet.client.WalletClient'
     applicationName = 'wallet-client'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath

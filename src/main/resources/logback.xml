@@ -15,16 +15,6 @@
         </encoder>
     </appender>
 
-    <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
-        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
-            <jsonFormatter
-                    class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
-                <prettyPrint>true</prettyPrint>
-            </jsonFormatter>
-            <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
-        </layout>
-    </appender>
-
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Daily rollover -->
@@ -41,7 +31,6 @@
 
     <!-- Configure so that it outputs to both console and log file -->
     <root level="INFO">
-        <appender-ref ref="JSON" />
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>

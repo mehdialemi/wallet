@@ -6,26 +6,32 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "transactions")
+@Table(name = "transaction")
 public class Transaction {
 
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "transaction_id", unique = true, nullable = false)
     private int id;
 
     @Column
     private double amount;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 5)
+    private Currency currency;
+
     @Enumerated(EnumType.ORDINAL)
     @Column(columnDefinition = "smallint", nullable = false)
-    private Currency currency;
+    private TransactionType type;
 
     @Column(name = "datetime", columnDefinition="DATETIME", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    @ManyToOne
-    private Account account;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "balance_id", nullable = false)
+    private Balance balance;
 
     public int getId() {
         return id;
@@ -57,5 +63,21 @@ public class Transaction {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public void setType(TransactionType type) {
+        this.type = type;
+    }
+
+    public Balance getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Balance balance) {
+        this.balance = balance;
     }
 }

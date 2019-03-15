@@ -1,30 +1,33 @@
 package com.betpawa.wallet.repository;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "account")
 public class Account {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "account_id", unique = true, nullable = false)
+    private Long accountId;
 
     @Column(unique = true)
+    @NaturalId
     private String userId;
 
-    @OneToMany
-    private Set<Balance> balance;
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+    private Set<Balance> balance = new HashSet <>();
 
-    @OneToMany
-    private Set<Transaction> transactions;
-
-    public Long getId() {
-        return id;
+    public Long getAccountId() {
+        return accountId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
     }
 
     public String getUserId() {
@@ -41,13 +44,5 @@ public class Account {
 
     public void setBalance(Set <Balance> balance) {
         this.balance = balance;
-    }
-
-    public Set <Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Set <Transaction> transactions) {
-        this.transactions = transactions;
     }
 }

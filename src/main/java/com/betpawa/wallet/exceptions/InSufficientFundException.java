@@ -2,7 +2,7 @@ package com.betpawa.wallet.exceptions;
 
 public class InSufficientFundException extends RuntimeException {
 
-    InSufficientFundException() {
+    public InSufficientFundException() {
         super("insufficient_funds");
     }
 }

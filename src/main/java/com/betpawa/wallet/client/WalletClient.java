@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.betpawa.wallet.commons.Constants.SERVER_PORT;
+
 /**
  * A simple client that send deposit, withdraw, and balance requests to the Wallet server
  */
@@ -45,13 +47,11 @@ public class WalletClient {
                 .setCurrency(currency)
                 .build();
 
-        logger.info( "Will try to deposit {}", request);
+        logger.info( "Will try to deposit {}", StringUtil.toString(request));
         try {
             blockingStub.deposit(request);
         } catch (StatusRuntimeException e) {
-            logger.error("RPC failed: {0}", e.getStatus(), e);
-        } catch (Throwable t) {
-            logger.error("Error: {}", t.getMessage());
+            logger.warn(e.getStatus().getDescription());
         }
     }
 
@@ -62,13 +62,11 @@ public class WalletClient {
                 .setCurrency(currency)
                 .build();
 
-        logger.info("Will try to withdraw {}", request);
+        logger.info("Will try to withdraw {}", StringUtil.toString(request));
         try {
             blockingStub.withdraw(request);
         } catch (StatusRuntimeException e) {
-            logger.error("RPC failed: {0}", e.getStatus(), e);
-        } catch (Throwable t) {
-            logger.error("Error: {}", t.getMessage());
+            logger.warn(e.getStatus().getDescription());
         }
     }
 
@@ -77,13 +75,19 @@ public class WalletClient {
                 .setUserId(userId)
                 .build();
 
-        logger.info("Will try to get balance {}", request);
+        logger.info("Will try to get balance {}", StringUtil.toString(request));
         try {
-            blockingStub.balance(request);
+            BalanceResponse response = blockingStub.balance(request);
+            StringBuilder sb = new StringBuilder("Balance: ");
+            for (BalanceResult result : response.getResultsList()) {
+                sb.append(result.getAmount())
+                        .append(" ")
+                        .append(result.getCurrency().name())
+                        .append(", ");
+            }
+            logger.info(sb.toString());
         } catch (StatusRuntimeException e) {
-            logger.error("RPC failed: {0}", e.getStatus(), e);
-        } catch (Throwable t) {
-            logger.error("Error: {}", t.getMessage());
+            logger.warn(e.getStatus().getDescription());
         }
     }
 
@@ -92,7 +96,7 @@ public class WalletClient {
      * greeting.
      */
     public static void main(String[] args) throws Exception {
-        WalletClient client = new WalletClient("localhost", 50051);
+        WalletClient client = new WalletClient("localhost", SERVER_PORT);
         try {
             /* Access a service running on the local machine on port 50051 */
             String userId = "1";

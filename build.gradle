@@ -39,18 +39,24 @@ dependencies {
     compile "io.grpc:grpc-stub:${grpcVersion}"
     compile "javax.annotation:javax.annotation-api:1.2"
     runtime "io.grpc:grpc-netty-shaded:${grpcVersion}"
-    compile "io.dropwizard.metrics:metrics-core:4.0.5"
+
     compile "mysql:mysql-connector-java:8.0.15"
     compile "org.hibernate:hibernate-core:5.4.1.Final"
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
-    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+    compile "org.hibernate:hibernate-hikaricp:5.4.1.Final"
+    compile "com.zaxxer:HikariCP:2.6.1"
+
+    compile "io.dropwizard.metrics:metrics-core:4.0.5"
+    compile "commons-cli:commons-cli:1.4"
+    compile "commons-beanutils:commons-beanutils:1.9.3"
     compile "org.apache.commons:commons-configuration2:2.4"
+
     compile "org.slf4j:slf4j-api:1.7.25"
     compile "ch.qos.logback:logback-classic:1.2.3"
     compile "ch.qos.logback:logback-core:1.2.3"
     compile "ch.qos.logback.contrib:logback-json-classic:0.1.5"
     compile "ch.qos.logback.contrib:logback-jackson:0.1.5"
     compile "com.fasterxml.jackson.core:jackson-databind:2.9.6"
+
     testImplementation "io.grpc:grpc-testing:${grpcVersion}"
     testCompile "junit:junit:4.12"
 }

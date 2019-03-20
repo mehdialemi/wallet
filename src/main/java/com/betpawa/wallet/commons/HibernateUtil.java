@@ -9,6 +9,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +26,8 @@ public class HibernateUtil {
                 config.addAnnotatedClass(Account.class);
                 config.addAnnotatedClass(Balance.class);
                 config.addAnnotatedClass(Transaction.class);
-//                config.getProperties().put("hibernate.show_sql", "false");
+                config.getProperties().put(Environment.SHOW_SQL, false);
+                config.getProperties().put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 
                 logger.info("Hibernate config is loaded successfully");
 
@@ -33,10 +35,14 @@ public class HibernateUtil {
                         .applySettings(config.getProperties()).build();
 
                 Metadata metadata = new MetadataSources(registry)
+                        .addAnnotatedClass(Account.class)
+                        .addAnnotatedClass(Balance.class)
+                        .addAnnotatedClass(Transaction.class)
                         .getMetadataBuilder()
                         .build();
 
-                sessionFactory = config.buildSessionFactory();
+                sessionFactory = metadata.getSessionFactoryBuilder().build();
+
                 logger.info("SessionFactory is created by StandardServiceRegistry");
 
             } catch (Exception e) {

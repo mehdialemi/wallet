@@ -21,13 +21,10 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create-drop</property>
         <!-- dbcp connection pool configuration -->
-        <property name="hibernate.dbcp.initialSize">10</property>
-        <property name="hibernate.dbcp.maxTotal">500</property>
-        <property name="hibernate.dbcp.maxIdle">50</property>
-        <property name="hibernate.dbcp.minIdle">10</property>
-        <property name="hibernate.dbcp.maxWaitMillis">-1</property>
-        <!--<mapping class="com.betpawa.wallet.entities.Account" />-->
-        <!--<mapping class="com.betpawa.wallet.entities.Balance" />-->
-        <!--<mapping class="com.betpawa.wallet.entities.Transaction" />-->
+        <property name="hibernate.hikari.connectionTimeout">20000</property>
+        <property name="hibernate.hikari.minimumIdle">10</property>
+        <property name="hibernate.hikari.maximumPoolSize">20</property>
+        <property name="hibernate.hikari.idleTimeout">300000</property>
+
     </session-factory>
 </hibernate-configuration>

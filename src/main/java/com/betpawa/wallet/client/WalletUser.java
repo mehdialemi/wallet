@@ -1,6 +1,5 @@
 package com.betpawa.wallet.client;
 
-import com.codahale.metrics.Meter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Timer;
 import org.slf4j.Logger;
@@ -9,7 +8,10 @@ import org.slf4j.LoggerFactory;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class WalletUser implements Closeable {
     private static final Logger logger = LoggerFactory.getLogger(WalletUser.class);
@@ -27,16 +29,13 @@ public class WalletUser implements Closeable {
         roundList = new ArrayList <>();
 
         walletClient.createAccount(userId);
-        final Timer roundTimer = registry.timer("user.rounds.delay");
         final Timer roundOperationTimer = registry.timer("round.operation.delay");
         UserRound.setOperationTimer(roundOperationTimer);
 
         for (int thread = 0; thread < threads; thread++) {
             roundList.add(() -> {
                 for (int round = 0; round < threadRounds; round++) {
-                    Timer.Context time = roundTimer.time();
                     UserRound.randomRound(walletClient, userId);
-                    time.stop();
                 }
                 return true;
             });

@@ -1,6 +1,7 @@
-package com.betpawa.wallet.repository;
+package com.betpawa.wallet.entities;
 
 import com.betpawa.wallet.commons.Currency;
+import com.betpawa.wallet.commons.TransactionType;
 
 import javax.persistence.*;
 import java.io.Serializable;

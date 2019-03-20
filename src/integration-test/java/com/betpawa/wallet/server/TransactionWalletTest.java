@@ -4,10 +4,9 @@ import com.betpawa.wallet.client.WalletClient;
 import com.betpawa.wallet.commons.BalanceResponse;
 import com.betpawa.wallet.commons.BalanceResult;
 import com.betpawa.wallet.commons.Currency;
+import com.betpawa.wallet.commons.WalletConfig;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
-import org.hamcrest.core.Is;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -15,7 +14,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.List;
 
-import static com.betpawa.wallet.commons.Constants.SERVER_PORT;
 import static org.junit.Assert.*;
 
 public class TransactionWalletTest {
@@ -26,9 +24,11 @@ public class TransactionWalletTest {
 
     @BeforeClass
     public static void setupClass() throws IOException {
-        walletServer = new WalletServer();
-        port = new ServerSocket(0).getLocalPort();
-        walletServer.start(port);
+        WalletConfig config = new WalletConfig();
+        config.setPort(new ServerSocket(0).getLocalPort());
+        port = config.getPort();
+        walletServer = new WalletServer(config);
+        walletServer.start();
     }
 
     @AfterClass

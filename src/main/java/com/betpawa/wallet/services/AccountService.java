@@ -1,14 +1,11 @@
 package com.betpawa.wallet.services;
 
-import com.betpawa.wallet.commons.Currency;
-import com.betpawa.wallet.commons.DepositRequest;
-import com.betpawa.wallet.commons.WithdrawRequest;
+import com.betpawa.wallet.commons.*;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
 import com.betpawa.wallet.exceptions.UnknownCurrencyException;
-import com.betpawa.wallet.repository.Account;
-import com.betpawa.wallet.repository.Balance;
-import com.betpawa.wallet.repository.Transaction;
-import com.betpawa.wallet.repository.TransactionType;
+import com.betpawa.wallet.entities.Account;
+import com.betpawa.wallet.entities.Balance;
+import com.betpawa.wallet.entities.Transaction;
 import org.hibernate.Session;
 
 import java.util.Date;
@@ -34,7 +31,7 @@ public class AccountService {
             Session session = mySession.openSession();
 
             Account account = getAccount(request.getUserId(), session);
-            Balance balance = getCurrencyBalance(account, request.getCurrency());
+            Balance balance = getCurrencyBalance(account, request.getCurrency(), session);
 
             if (balance.getAmount() < request.getAmount())
                 throw new InSufficientFundException();
@@ -48,9 +45,8 @@ public class AccountService {
             transaction.setDate(new Date());
             transaction.setBalance(balance);
 
-            session.save(balance);
-            session.save(account);
-            session.save(transaction);
+            session.persist(balance);
+            session.persist(transaction);
         } // Finally, commit the transaction and close the session
     }
 
@@ -62,7 +58,7 @@ public class AccountService {
             Session session = mySession.openSession();
 
             Account account = getAccount(request.getUserId(), session);
-            Balance balance = getCurrencyBalance(account, request.getCurrency());
+            Balance balance = getCurrencyBalance(account, request.getCurrency(), session);
             balance.setAmount(balance.getAmount() + request.getAmount());
 
             Transaction transaction = new Transaction();
@@ -72,9 +68,8 @@ public class AccountService {
             transaction.setDate(new Date());
             transaction.setBalance(balance);
 
-            session.save(balance);
-            session.save(account);
-            session.save(transaction);
+            session.persist(balance);
+            session.persist(transaction);
         } // Finally, commit the transaction and close the session
     }
 
@@ -116,7 +111,7 @@ public class AccountService {
      * When no related balance could be found, a new Balance instance with the given Currency
      * would be createdUnknownCurrencyException will be thrown.
      */
-    private Balance getCurrencyBalance(Account account, Currency currency) {
+    private Balance getCurrencyBalance(Account account, Currency currency, Session session) {
         Balance balance = null;
         for (Balance currentBalance : account.getBalance()) {
             if (currentBalance.getCurrency() == currency) {
@@ -129,6 +124,7 @@ public class AccountService {
             balance = new Balance();
             balance.setCurrency(currency);
             account.getBalance().add(balance);
+            session.save(account);
         }
 
         return balance;

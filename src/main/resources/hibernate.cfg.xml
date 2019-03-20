@@ -6,7 +6,7 @@
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">
-            jdbc:mysql://localhost:3306/wallet_db?createDatabaseIfNotExist=true
+            jdbc:mysql://localhost/wallet_db?createDatabaseIfNotExist=true
         </property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
@@ -26,8 +26,8 @@
         <property name="hibernate.dbcp.maxIdle">50</property>
         <property name="hibernate.dbcp.minIdle">10</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
-        <!--<mapping class="com.betpawa.wallet.repository.Account" />-->
-        <!--<mapping class="com.betpawa.wallet.repository.Balance" />-->
-        <!--<mapping class="com.betpawa.wallet.repository.Transaction" />-->
+        <!--<mapping class="com.betpawa.wallet.entities.Account" />-->
+        <!--<mapping class="com.betpawa.wallet.entities.Balance" />-->
+        <!--<mapping class="com.betpawa.wallet.entities.Transaction" />-->
     </session-factory>
 </hibernate-configuration>

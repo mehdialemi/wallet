@@ -1,4 +1,4 @@
-package com.betpawa.wallet.repository;
+package com.betpawa.wallet.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;

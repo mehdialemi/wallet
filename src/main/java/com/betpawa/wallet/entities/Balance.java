@@ -1,4 +1,4 @@
-package com.betpawa.wallet.repository;
+package com.betpawa.wallet.entities;
 
 import com.betpawa.wallet.commons.Currency;
 

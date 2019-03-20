@@ -1,4 +1,4 @@
-package com.betpawa.wallet.repository;
+package com.betpawa.wallet.commons;
 
 public enum TransactionType {
     WITHDRAW,

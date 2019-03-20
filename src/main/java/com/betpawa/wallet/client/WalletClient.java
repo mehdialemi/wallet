@@ -1,17 +1,22 @@
 package com.betpawa.wallet.client;
 
 import com.betpawa.wallet.commons.*;
+import com.codahale.metrics.ConsoleReporter;
+import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.Slf4jReporter;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import static com.betpawa.wallet.commons.Constants.SERVER_PORT;
 
 /**
  * A simple client that send deposit, withdraw, and balance requests to the Wallet server
@@ -121,19 +126,45 @@ public class WalletClient {
      * greeting.
      */
     public static void main(String[] args) throws Exception {
+
+        String optNumUsers = "u";
+        String optNumThreads = "t";
+        String optNumRounds = "r";
+        String optConfig = "c";
+        Options options = new Options();
+        options.addOption(optConfig, true, "config file address, default is wallet.properties" +
+                " in the current directory");
+        options.addOption(optNumUsers, true, "number of users, default is 1");
+        options.addOption(optNumThreads, true, "number of threads per user, default is 1");
+        options.addOption(optNumRounds, true, "number of rounds per user, default is 1");
+
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd = parser.parse(options, args);
+
+        String configFile = cmd.getOptionValue(optConfig, "wallet.properties");
+        int numUsers = Integer.valueOf(cmd.getOptionValue(optNumUsers, "1"));
+        int numThreads = Integer.valueOf(cmd.getOptionValue(optNumThreads, "1"));
+        int numRounds = Integer.valueOf(cmd.getOptionValue(optNumRounds, "1"));
+
+        WalletConfig config = new WalletConfig(configFile);
         List<WalletUser> walletUsers = new ArrayList <>();
+        logger.info("Starting client with config, users: {}, perUserThreads: {}, perUserRounds: {}",
+                numUsers, numThreads, numRounds);
+        logger.info("Connecting users server {}:{}", config.getServer(), config.getPort());
+
+        MetricRegistry metricRegistry = new MetricRegistry();
+        ConsoleReporter reporter = ConsoleReporter.forRegistry(metricRegistry)
+                .convertRatesTo(TimeUnit.SECONDS)
+                .convertDurationsTo(TimeUnit.SECONDS)
+                .shutdownExecutorOnStop(true)
+                .build();
+        reporter.start(config.getReportPeriodSec(), TimeUnit.SECONDS);
+
         try {
             /* Access a service running on the local machine on port 50051 */
 
-            String server = "localhost";
-            int port = SERVER_PORT;
-
-            int numUsers = 100;
-            int numThreads = 10;
-            int numRounds = 100;
-
             for (int i = 0; i < numUsers; i++) {
-                walletUsers.add(new WalletUser(server, port, "userId-" + i, numThreads, numRounds));
+                walletUsers.add(new WalletUser(config.getServer(), config.getPort(), "uid-" + i, numThreads, numRounds, metricRegistry));
             }
 
             for (WalletUser walletUser : walletUsers) {
@@ -142,8 +173,10 @@ public class WalletClient {
 
             for (WalletUser walletUser : walletUsers) {
                 walletUser.waitToComplete();
+                logger.info("User {} is completed", walletUser.getUserId());
             }
 
+            reporter.report();
         } finally {
             for (WalletUser walletUser : walletUsers) {
                 walletUser.close();

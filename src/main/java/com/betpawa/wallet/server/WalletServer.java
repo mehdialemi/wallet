@@ -1,15 +1,16 @@
 package com.betpawa.wallet.server;
 
-import com.betpawa.wallet.commons.Constants;
 import com.betpawa.wallet.commons.HibernateUtil;
-import com.codahale.metrics.Meter;
-import com.codahale.metrics.MetricRegistry;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
+import com.betpawa.wallet.commons.WalletConfig;
+import com.betpawa.wallet.services.WalletService;
+import io.grpc.*;
+import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Server that manages startup/shutdown of a {@code Wallet} server.
@@ -19,14 +20,27 @@ public class WalletServer {
     private static final Logger logger = LoggerFactory.getLogger(WalletServer.class);
 
     private Server server;
+    private WalletConfig walletConfig;
 
-    public void start(int port) throws IOException {
+    public WalletServer(WalletConfig config) {
+
+        this.walletConfig = config;
+    }
+
+    public void start() throws IOException {
+        ExecutorService executorService = Executors.newFixedThreadPool(walletConfig.getGrpcThreads());
+
         /* The port on which the server should run */
-        server = ServerBuilder.forPort(port)
-                .addService(new WalletServerImpl())
+        CompressorRegistry compressorRegistry = CompressorRegistry.getDefaultInstance();
+        DecompressorRegistry decompressorRegistry = DecompressorRegistry.getDefaultInstance();
+        server = ServerBuilder.forPort(walletConfig.getPort())
+                .compressorRegistry(compressorRegistry)
+                .decompressorRegistry(decompressorRegistry)
+                .addService(new WalletService(walletConfig))
+                .executor(executorService)
                 .build()
                 .start();
-        logger.info("Server started, listening on " + Constants.SERVER_PORT);
+        logger.info("Server started, listening on " + walletConfig.getPort());
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             // Use stderr here since the logger may have been reset by its JVM shutdown hook.
@@ -60,9 +74,17 @@ public class WalletServer {
     /**
      * Main launches the server from the command line.
      */
-    public static void main(String[] args) throws IOException, InterruptedException {
-        final WalletServer server = new WalletServer();
-        server.start(Constants.SERVER_PORT);
+    public static void main(String[] args) throws Exception {
+        String optConfig = "c";
+        Options options = new Options();
+        options.addOption(optConfig, true, "config file address, default is wallet.properties" +
+                " in the current directory");
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd = parser.parse(options, args);
+        String configFile = cmd.getOptionValue(optConfig, "wallet.properties");
+
+        final WalletServer server = new WalletServer(new WalletConfig(configFile));
+        server.start();
         server.blockUntilShutdown();
     }
 }

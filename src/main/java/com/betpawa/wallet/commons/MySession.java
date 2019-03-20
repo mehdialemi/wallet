@@ -1,6 +1,5 @@
-package com.betpawa.wallet.services;
+package com.betpawa.wallet.commons;
 
-import com.betpawa.wallet.commons.HibernateUtil;
 import org.hibernate.Session;
 
 import java.io.Closeable;

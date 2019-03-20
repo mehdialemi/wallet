@@ -1,8 +1,8 @@
 package com.betpawa.wallet.commons;
 
-import com.betpawa.wallet.repository.Account;
-import com.betpawa.wallet.repository.Balance;
-import com.betpawa.wallet.repository.Transaction;
+import com.betpawa.wallet.entities.Account;
+import com.betpawa.wallet.entities.Balance;
+import com.betpawa.wallet.entities.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;

@@ -1,5 +1,6 @@
 package com.betpawa.wallet.entities;
 
+import com.betpawa.wallet.account.Transaction;
 import com.betpawa.wallet.commons.Currency;
 
 import javax.persistence.*;

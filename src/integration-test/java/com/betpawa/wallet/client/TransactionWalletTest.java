@@ -1,11 +1,11 @@
-package com.betpawa.wallet.server;
+package com.betpawa.wallet.client;
 
-import com.betpawa.wallet.client.WalletClient;
 import com.betpawa.wallet.commons.BalanceResponse;
 import com.betpawa.wallet.commons.BalanceResult;
 import com.betpawa.wallet.commons.Currency;
 import com.betpawa.wallet.commons.WalletConfig;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
+import com.betpawa.wallet.server.WalletServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -45,6 +45,8 @@ public class TransactionWalletTest {
         String userId = "1";
 
         try {
+            client.registerUser(userId);
+
             String msg = client.withdraw(userId, 200.0, Currency.USD);
             assertEquals(InSufficientFundException.MESSAGE, msg);
 
@@ -53,10 +55,7 @@ public class TransactionWalletTest {
 
             BalanceResponse balance = client.balance(userId);
             assertNotNull(balance);
-            assertEquals(1, balance.getResultsCount());
-            List <BalanceResult> resultsList = balance.getResultsList();
-            assertEquals(100.0, resultsList.get(0).getAmount(), 000.1);
-            assertEquals(Currency.USD, resultsList.get(0).getCurrency());
+            assertBalances(createBalances(100, 0, 0), balance.getResultsList());
 
             msg = client.withdraw(userId, 200.0, Currency.USD);
             assertEquals(InSufficientFundException.MESSAGE, msg);
@@ -66,18 +65,7 @@ public class TransactionWalletTest {
 
             balance = client.balance(userId);
             assertNotNull(balance);
-            assertEquals(2, balance.getResultsCount());
-            BalanceResponse expected = BalanceResponse.newBuilder()
-                    .addResults(BalanceResult.newBuilder()
-                            .setAmount(100.0)
-                            .setCurrency(Currency.EUR)
-                    ).addResults(BalanceResult.newBuilder()
-                            .setAmount(100.0)
-                            .setCurrency(Currency.USD)
-                    ).build();
-            resultsList = balance.getResultsList();
-            assertTrue(expected.getResultsList().contains(resultsList.get(0)));
-            assertTrue(expected.getResultsList().contains(resultsList.get(1)));
+            assertBalances(createBalances(100, 100, 0), balance.getResultsList());
 
             msg = client.withdraw(userId, 200.0, Currency.USD);
             assertEquals(InSufficientFundException.MESSAGE, msg);
@@ -86,42 +74,42 @@ public class TransactionWalletTest {
             assertEquals(OK, msg);
 
             balance = client.balance(userId);
-            assertEquals(2, balance.getResultsCount());
-            expected = BalanceResponse.newBuilder()
-                    .addResults(BalanceResult.newBuilder()
-                            .setAmount(100.0)
-                            .setCurrency(Currency.EUR)
-                    ).addResults(BalanceResult.newBuilder()
-                            .setAmount(200.0)
-                            .setCurrency(Currency.USD)
-                    ).build();
-            resultsList = balance.getResultsList();
-            assertTrue(expected.getResultsList().contains(resultsList.get(0)));
-            assertTrue(expected.getResultsList().contains(resultsList.get(1)));
-
+            assertNotNull(balance);
+            assertBalances(createBalances(200, 100, 0), balance.getResultsList());
 
             msg = client.withdraw(userId, 200.0, Currency.USD);
             assertEquals(OK, msg);
 
             balance = client.balance(userId);
-            assertEquals(2, balance.getResultsCount());
-            resultsList = balance.getResultsList();
-            expected = BalanceResponse.newBuilder()
-                    .addResults(BalanceResult.newBuilder()
-                            .setAmount(100.0)
-                            .setCurrency(Currency.EUR)
-                    ).addResults(BalanceResult.newBuilder()
-                            .setAmount(0.0)
-                            .setCurrency(Currency.USD)
-                    ).build();
-            assertTrue(expected.getResultsList().contains(resultsList.get(0)));
-            assertTrue(expected.getResultsList().contains(resultsList.get(1)));
+            assertNotNull(balance);
+            assertBalances(createBalances(0, 100, 0), balance.getResultsList());
 
             msg = client.withdraw(userId, 200.0, Currency.USD);
             assertEquals(InSufficientFundException.MESSAGE, msg);
 
         } finally {
             client.shutdown();
+        }
+    }
+
+    private List <BalanceResult> createBalances(double usdVal, double eurVal, double gbpVal) {
+        return BalanceResponse.newBuilder()
+                .addResults(BalanceResult.newBuilder()
+                        .setAmount(usdVal)
+                        .setCurrency(Currency.USD))
+                .addResults(BalanceResult.newBuilder()
+                        .setAmount(eurVal)
+                        .setCurrency(Currency.EUR))
+                .addResults(BalanceResult.newBuilder()
+                        .setAmount(gbpVal)
+                        .setCurrency(Currency.GBP))
+                .build().getResultsList();
+    }
+
+    private void assertBalances(List <BalanceResult> expected, List <BalanceResult> actual) {
+        assertEquals(expected.size(), actual.size());
+        for (BalanceResult balanceResult : expected) {
+            assertTrue(actual.contains(balanceResult));
         }
     }
 }

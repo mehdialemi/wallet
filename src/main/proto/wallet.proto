@@ -11,7 +11,7 @@ package commons;
 // The client will emulate users depositing and withdrawing funds.
 service WalletTransaction {
 
-    rpc createAccount (NewAccount) returns (Empty);
+    rpc registerUser (UserId) returns (Empty);
     // Deposit funds to the users wallet.
     rpc Deposit (DepositRequest) returns (Empty);
 
@@ -22,7 +22,7 @@ service WalletTransaction {
     rpc Balance (BalanceRequest) returns (BalanceResponse);
 }
 
-message NewAccount {
+message UserId {
     string userId = 1;
 }
 

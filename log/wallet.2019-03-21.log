@@ -798,3 +798,1169 @@
 02:25:52.478 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
 02:25:52.478 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
 02:25:52.617 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:30:39.087 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:30:39.090 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:30:39.884 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:30:39.939 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:30:40.086 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:30:40.417 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:30:40.540 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:30:40.744 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:30:40.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:30:41.042 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:30:41.230 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:30:41.306 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:30:41.312 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:30:41.334 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:30:41.424 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:30:41.747 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:30:41.854 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:30:41.996 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:30:42.086 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:30:42.226 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:30:42.408 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:30:42.486 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:30:42.554 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:30:42.628 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:30:42.675 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:30:42.725 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:30:42.843 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:30:42.921 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:30:42.978 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:30:43.047 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:30:43.096 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:30:43.107 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:30:43.162 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:30:43.221 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:30:43.294 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:30:43.371 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:30:43.408 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:30:43.491 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:30:43.560 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:30:43.632 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:30:43.669 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:30:43.671 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:30:43.674 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:30:43.683 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:30:43.685 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:30:43.686 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:30:43.693 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:30:43.695 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:30:43.697 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:30:43.699 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:30:43.701 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:30:43.702 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:30:43.709 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:30:43.710 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:30:43.710 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:30:43.711 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:30:43.711 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:30:43.712 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:30:43.712 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:30:43.769 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:30:43.770 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:30:43.770 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:30:43.770 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:30:43.770 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:30:43.770 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:30:43.770 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:30:49.491 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:30:49.492 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:30:49.492 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:30:49.493 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:30:49.493 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:30:49.494 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:30:49.494 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:30:49.494 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:30:49.494 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:30:49.494 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:30:49.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:30:49.501 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:30:49.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:30:49.501 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:30:49.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:30:49.501 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:30:49.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:30:49.501 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:30:49.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:30:49.501 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:30:49.576 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:33:23.093 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:33:23.098 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:33:24.294 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:33:24.378 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:33:24.538 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:33:24.879 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:33:25.150 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:33:25.310 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:33:25.369 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:33:25.388 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:33:25.481 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:33:25.588 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:33:25.633 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:33:25.676 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:33:25.776 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:33:25.842 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:33:25.910 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:33:25.998 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:33:26.043 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:33:26.076 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:33:26.157 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:33:26.227 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:33:26.269 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:33:26.361 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:33:26.546 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:33:26.608 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:33:26.633 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:33:26.693 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:33:26.750 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:33:26.769 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:33:26.817 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:33:26.842 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:33:26.889 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:33:26.922 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:33:27.024 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:33:27.057 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:33:27.061 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:33:27.069 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:33:27.086 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:33:27.092 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:33:27.106 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:33:27.145 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:33:27.186 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:33:27.307 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:33:27.338 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:33:27.340 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:33:27.341 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:33:27.387 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:33:27.411 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:33:27.417 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:33:27.419 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:33:27.496 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:33:27.657 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:33:27.657 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:33:27.657 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:33:27.657 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:33:27.658 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:33:27.658 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:33:27.658 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:33:27.658 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:33:29.757 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:33:29.757 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:33:29.757 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:33:29.757 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:33:29.846 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:33:29.847 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:33:29.847 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:33:29.847 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:33:29.847 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:33:29.847 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:33:29.847 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:33:29.874 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:33:29.874 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:33:29.875 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:33:29.875 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:33:29.876 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:33:29.876 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:33:29.877 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:33:29.877 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:33:29.877 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:33:29.880 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:33:29.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:33:29.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:33:29.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:33:29.882 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:33:30.006 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:34:37.863 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:34:37.868 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:34:38.813 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:34:38.860 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:34:39.050 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:34:39.303 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:34:39.308 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:34:39.394 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:34:39.645 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:34:39.666 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:34:40.234 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:34:40.333 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:34:40.671 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:34:40.864 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:34:40.966 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:34:41.074 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:34:41.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:34:41.282 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:34:41.371 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:34:41.516 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:34:41.578 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:34:41.665 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:34:41.675 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:34:41.677 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:34:41.681 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:34:41.684 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:34:41.692 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:34:41.697 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:34:41.702 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:34:41.709 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:34:41.863 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:34:42.117 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:34:42.119 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:34:42.121 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:34:42.124 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:34:42.127 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:34:42.129 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:34:42.134 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:34:42.142 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:34:42.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:34:42.221 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:34:42.290 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:34:42.356 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:34:42.563 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:34:42.656 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:34:42.682 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:34:42.782 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:34:42.883 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:34:42.949 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:34:42.979 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:34:43.027 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:34:43.095 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:34:43.166 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:34:43.166 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:34:43.166 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:34:43.166 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:34:43.166 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:34:43.167 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:34:43.201 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:34:43.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:34:43.202 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:34:43.202 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:34:43.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:34:43.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:34:43.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:34:43.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:34:44.893 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:34:44.893 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:34:44.920 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:34:44.920 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:34:44.920 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:34:44.920 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:34:44.920 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:34:44.920 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:34:44.922 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:34:44.922 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:34:44.922 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:34:44.923 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:34:44.923 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:34:45.045 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:37:16.710 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:37:16.714 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:37:16.979 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:37:17.728 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:37:17.767 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-2
+04:37:17.802 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-3
+04:37:17.829 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-4
+04:37:17.854 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-5
+04:37:17.880 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-6
+04:37:17.906 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-7
+04:37:17.935 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-8
+04:37:17.962 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-9
+04:37:17.986 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-10
+04:37:18.012 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-11
+04:37:18.036 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-12
+04:37:18.062 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-13
+04:37:18.086 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-14
+04:37:18.110 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-15
+04:37:18.157 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-16
+04:37:18.184 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-17
+04:37:18.210 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-18
+04:37:18.233 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-19
+04:37:18.260 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-20
+04:37:18.283 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-21
+04:37:18.310 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-22
+04:37:18.333 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-23
+04:37:18.355 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-24
+04:37:18.392 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-25
+04:37:18.415 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-26
+04:37:18.436 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-27
+04:37:18.458 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-28
+04:37:18.481 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-29
+04:37:18.505 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-30
+04:37:18.527 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-31
+04:37:18.550 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-32
+04:37:18.572 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-33
+04:37:18.593 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-34
+04:37:18.617 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-35
+04:37:18.638 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-36
+04:37:18.661 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-37
+04:37:18.683 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-38
+04:37:18.703 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-39
+04:37:18.723 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-40
+04:37:18.742 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-41
+04:37:18.762 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-42
+04:37:18.788 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-43
+04:37:18.812 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-44
+04:37:18.865 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-45
+04:37:18.873 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-46
+04:37:18.876 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-47
+04:37:18.879 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-48
+04:37:18.882 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-49
+04:37:18.884 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:37:18.929 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:37:19.080 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:37:19.290 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:37:19.416 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:37:19.542 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:37:19.626 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:37:19.702 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:37:19.761 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:37:19.817 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:37:19.882 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:37:19.942 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:37:20.003 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:37:20.054 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:37:20.110 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:37:20.175 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:37:20.226 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:37:20.275 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:37:20.314 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:37:20.326 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:37:20.398 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:37:20.422 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:37:20.443 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:37:20.461 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:37:20.486 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:37:20.526 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:37:20.556 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:37:20.574 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:37:20.583 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:37:20.585 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:37:20.618 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:37:20.621 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:37:20.728 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:37:20.758 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:37:20.784 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:37:20.811 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:37:20.848 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:37:20.880 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:37:20.968 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:37:21.006 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:37:21.036 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:37:21.054 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:37:21.072 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:37:21.094 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:37:21.134 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:37:21.159 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:37:21.188 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:37:21.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:37:21.221 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:37:21.237 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:37:21.257 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:37:21.257 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:37:21.257 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:37:21.257 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:37:21.257 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:37:21.257 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:37:21.257 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:37:21.257 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:37:21.258 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:37:21.258 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:37:21.259 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:37:21.259 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:37:21.260 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:37:21.260 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:37:21.261 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:37:21.261 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:37:21.262 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:37:21.262 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:37:21.262 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:37:21.262 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:37:21.262 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:37:21.262 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:37:21.262 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:37:21.262 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:37:21.353 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:38:34.461 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:38:34.464 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:38:34.723 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:38:35.377 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:38:35.414 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-2
+04:38:35.454 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-3
+04:38:35.483 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-4
+04:38:35.507 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-5
+04:38:35.533 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-6
+04:38:35.558 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-7
+04:38:35.581 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-8
+04:38:35.599 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-9
+04:38:35.617 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-10
+04:38:35.637 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-11
+04:38:35.654 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-12
+04:38:35.672 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-13
+04:38:35.693 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-14
+04:38:35.711 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-15
+04:38:35.735 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-16
+04:38:35.751 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-17
+04:38:35.782 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-18
+04:38:35.800 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-19
+04:38:35.826 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-20
+04:38:35.843 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-21
+04:38:35.860 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-22
+04:38:35.877 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-23
+04:38:35.895 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-24
+04:38:35.910 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-25
+04:38:35.942 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-26
+04:38:35.957 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-27
+04:38:35.974 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-28
+04:38:35.990 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-29
+04:38:36.004 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-30
+04:38:36.019 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-31
+04:38:36.036 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-32
+04:38:36.050 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-33
+04:38:36.067 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-34
+04:38:36.083 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-35
+04:38:36.097 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-36
+04:38:36.112 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-37
+04:38:36.126 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-38
+04:38:36.141 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-39
+04:38:36.156 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-40
+04:38:36.169 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-41
+04:38:36.184 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-42
+04:38:36.201 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-43
+04:38:36.214 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-44
+04:38:36.227 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-45
+04:38:36.242 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-46
+04:38:36.260 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-47
+04:38:36.274 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-48
+04:38:36.286 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-49
+04:38:36.300 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:38:36.305 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:38:36.312 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:38:36.354 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:38:36.462 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:38:36.499 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:38:36.534 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:38:36.555 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:38:36.578 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:38:36.598 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:38:36.625 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:38:36.718 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:38:36.770 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:38:36.843 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:38:36.895 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:38:36.945 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:38:36.982 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:38:37.014 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:38:37.061 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:38:37.083 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:38:37.094 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:38:37.117 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:38:37.142 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:38:37.252 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:38:37.305 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:38:37.324 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:38:37.339 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:38:37.342 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:38:37.473 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:38:37.505 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:38:37.517 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:38:37.534 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:38:37.556 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:38:37.592 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:38:37.629 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:38:38.127 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:38:38.134 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:38:38.161 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:38:38.172 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:38:38.186 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:38:38.189 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:38:38.194 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:38:38.201 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:38:38.569 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:38:38.598 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:38:38.600 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:38:38.603 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:38:38.605 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:38:38.768 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:38:38.772 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:38:38.815 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:38:38.816 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:38:40.103 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:38:40.103 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:38:40.103 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:38:40.103 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:38:40.103 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:38:40.103 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:38:40.104 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:38:40.104 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:38:40.105 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:38:40.105 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:38:40.203 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:38:40.203 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:38:40.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:38:40.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:38:40.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:38:40.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:38:40.204 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:38:40.204 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:38:40.207 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:38:40.207 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:38:40.207 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:38:40.207 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:38:40.207 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:38:40.207 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:38:40.207 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:38:40.207 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:38:40.207 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:38:40.207 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:38:40.208 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:38:40.208 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:38:40.211 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:38:40.212 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:38:40.212 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:38:40.213 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:38:40.213 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:38:40.321 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:41:13.168 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 50, perUserThreads: 10, perUserRounds: 50
+04:41:13.174 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:41:13.625 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:41:14.079 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:41:14.088 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-2
+04:41:14.096 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-3
+04:41:14.108 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-4
+04:41:14.116 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-5
+04:41:14.121 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-6
+04:41:14.125 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-7
+04:41:14.134 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-8
+04:41:14.143 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-9
+04:41:14.149 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-10
+04:41:14.154 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-11
+04:41:14.159 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-12
+04:41:14.164 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-13
+04:41:14.172 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-14
+04:41:14.177 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-15
+04:41:14.190 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-16
+04:41:14.195 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-17
+04:41:14.200 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-18
+04:41:14.206 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-19
+04:41:14.211 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-20
+04:41:14.216 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-21
+04:41:14.221 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-22
+04:41:14.227 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-23
+04:41:14.231 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-24
+04:41:14.236 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-25
+04:41:14.242 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-26
+04:41:14.247 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-27
+04:41:14.252 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-28
+04:41:14.256 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-29
+04:41:14.261 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-30
+04:41:14.266 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-31
+04:41:14.274 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-32
+04:41:14.279 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-33
+04:41:14.284 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-34
+04:41:14.289 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-35
+04:41:14.293 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-36
+04:41:14.298 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-37
+04:41:14.302 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-38
+04:41:14.307 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-39
+04:41:14.312 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-40
+04:41:14.317 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-41
+04:41:14.322 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-42
+04:41:14.327 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-43
+04:41:14.332 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-44
+04:41:14.336 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-45
+04:41:14.340 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-46
+04:41:14.347 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-47
+04:41:14.354 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-48
+04:41:14.359 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-49
+04:41:14.362 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:41:14.429 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:41:14.524 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-2
+04:41:14.810 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-3
+04:41:15.067 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-4
+04:41:15.328 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-5
+04:41:15.330 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-6
+04:41:15.348 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-7
+04:41:15.408 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-8
+04:41:15.595 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-9
+04:41:15.750 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-10
+04:41:15.860 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-11
+04:41:16.035 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-12
+04:41:16.235 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-13
+04:41:16.303 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-14
+04:41:16.406 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-15
+04:41:16.501 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-16
+04:41:16.591 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-17
+04:41:16.634 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-18
+04:41:16.679 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-19
+04:41:16.738 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-20
+04:41:16.759 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-21
+04:41:16.860 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-22
+04:41:16.906 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-23
+04:41:16.966 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-24
+04:41:17.051 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-25
+04:41:17.098 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-26
+04:41:17.214 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-27
+04:41:17.270 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-28
+04:41:17.325 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-29
+04:41:17.428 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-30
+04:41:17.456 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-31
+04:41:17.465 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-32
+04:41:17.674 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-33
+04:41:17.782 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-34
+04:41:17.863 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-35
+04:41:17.936 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-36
+04:41:18.004 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-37
+04:41:18.059 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-38
+04:41:18.076 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-39
+04:41:18.081 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-40
+04:41:18.090 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-41
+04:41:18.096 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-42
+04:41:18.148 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-43
+04:41:18.197 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-44
+04:41:18.230 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-45
+04:41:18.246 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-46
+04:41:18.302 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-47
+04:41:18.354 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-48
+04:41:18.383 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-49
+04:41:18.398 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 10, failed: 0
+04:41:18.399 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:41:18.399 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 10, failed: 0
+04:41:18.399 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:41:18.399 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-2 is completed, success: 10, failed: 0
+04:41:18.399 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-2 is completed
+04:41:18.399 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-3 is completed, success: 10, failed: 0
+04:41:18.399 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-3 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-4 is completed, success: 10, failed: 0
+04:41:19.177 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-4 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-5 is completed, success: 10, failed: 0
+04:41:19.177 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-5 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-6 is completed, success: 10, failed: 0
+04:41:19.177 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-6 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-7 is completed, success: 10, failed: 0
+04:41:19.177 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-7 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-8 is completed, success: 10, failed: 0
+04:41:19.177 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-8 is completed
+04:41:19.177 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-9 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-9 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-10 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-10 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-11 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-11 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-12 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-12 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-13 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-13 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-14 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-14 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-15 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-15 is completed
+04:41:19.178 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-16 is completed, success: 10, failed: 0
+04:41:19.178 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-16 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-17 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-17 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-18 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-18 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-19 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-19 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-20 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-20 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-21 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-21 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-22 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-22 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-23 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-23 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-24 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-24 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-25 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-25 is completed
+04:41:19.179 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-26 is completed, success: 10, failed: 0
+04:41:19.179 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-26 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-27 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-27 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-28 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-28 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-29 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-29 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-30 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-30 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-31 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-31 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-32 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-32 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-33 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-33 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-34 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-34 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-35 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-35 is completed
+04:41:19.180 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-36 is completed, success: 10, failed: 0
+04:41:19.180 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-36 is completed
+04:41:19.181 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-37 is completed, success: 10, failed: 0
+04:41:19.181 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-37 is completed
+04:41:19.181 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-38 is completed, success: 10, failed: 0
+04:41:19.181 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-38 is completed
+04:41:19.181 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-39 is completed, success: 10, failed: 0
+04:41:19.181 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-39 is completed
+04:41:19.181 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-40 is completed, success: 10, failed: 0
+04:41:19.181 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-40 is completed
+04:41:19.181 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-41 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-41 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-42 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-42 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-43 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-43 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-44 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-44 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-45 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-45 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-46 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-46 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-47 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-47 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-48 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-48 is completed
+04:41:19.182 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-49 is completed, success: 10, failed: 0
+04:41:19.182 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-49 is completed
+04:41:19.294 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:43:10.612 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 1, perUserThreads: 1, perUserRounds: 1
+04:43:10.617 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:43:10.994 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:43:11.292 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:43:11.304 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 1, failed: 0
+04:43:11.304 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:43:11.328 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:43:27.386 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 2, perUserThreads: 2, perUserRounds: 2
+04:43:27.389 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:43:27.661 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:43:28.379 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:43:28.413 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:43:28.414 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:43:28.744 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 2, failed: 0
+04:43:28.744 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:43:28.744 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 2, failed: 0
+04:43:28.744 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:43:28.776 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:50:05.815 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 2, perUserThreads: 2, perUserRounds: 2
+04:50:05.820 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:50:06.086 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:50:06.764 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:50:06.793 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:50:06.794 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:50:07.124 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 2, failed: 0
+04:50:07.124 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:50:07.124 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 2, failed: 0
+04:50:07.124 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:50:07.159 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:53:53.756 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.1.Final}
+04:53:54.101 [main] INFO  c.b.wallet.commons.HibernateUtil - Hibernate config is loaded successfully
+04:53:54.148 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+04:53:54.314 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+04:53:54.569 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+04:53:54.582 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+04:53:55.821 [main] INFO  c.b.wallet.commons.HibernateUtil - SessionFactory is created by StandardServiceRegistry
+04:53:56.058 [main] INFO  c.betpawa.wallet.server.WalletServer - Server started, listening on 8080
+04:54:01.265 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 2, perUserThreads: 2, perUserRounds: 2
+04:54:01.269 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:54:01.532 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:54:01.928 [pool-1-thread-2] INFO  c.b.wallet.server.WalletService - Create new account for userId: uid-0
+04:54:02.109 [pool-1-thread-5] INFO  c.b.wallet.server.WalletService - Create new account for userId: uid-0
+04:54:02.124 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:54:02.133 [pool-1-thread-8] INFO  c.b.wallet.server.WalletService - Create new account for userId: uid-1
+04:54:02.142 [pool-1-thread-11] INFO  c.b.wallet.server.WalletService - Create new account for userId: uid-1
+04:54:02.148 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:54:02.148 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:54:02.370 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 2, failed: 0
+04:54:02.370 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:54:02.420 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 2, failed: 0
+04:54:02.420 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:54:02.454 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+04:54:05.832 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=4.571967735559356, m1=0.8955025561515791, m5=0.1851197171978841, m15=0.062049702345156624, rate_unit=events/second, duration_unit=seconds
+04:54:15.827 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=2.517603895555152, m1=0.7580265483751427, m5=0.17905077099046918, m15=0.06136407728981465, rate_unit=events/second, duration_unit=seconds
+04:54:25.827 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=1.736795961160488, m1=0.6416556201814694, m5=0.17318078850569826, m15=0.06068602812442454, rate_unit=events/second, duration_unit=seconds
+04:54:35.826 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=1.3256654711004188, m1=0.5431497561569669, m5=0.16750324693688046, m15=0.060015471138351574, rate_unit=events/second, duration_unit=seconds
+04:54:45.827 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=1.0719067371633173, m1=0.4597663424656658, m5=0.16201183732036403, m15=0.059352323545930945, rate_unit=events/second, duration_unit=seconds
+04:54:55.826 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.899699417996382, m1=0.38918380661698565, m5=0.15670045752492764, m15=0.05869650347624724, rate_unit=events/second, duration_unit=seconds
+04:55:05.827 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.7751582628513416, m1=0.3294369799246412, m5=0.15156320547100668, m15=0.05804792996302677, rate_unit=events/second, duration_unit=seconds
+04:55:15.826 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.6809083448117418, m1=0.2788623830093649, m5=0.14659437257222013, m15=0.05740652293464166, rate_unit=events/second, duration_unit=seconds
+04:55:25.827 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.6070901152006418, m1=0.2360519109768743, m5=0.14178843739190905, m15=0.056772203204224346, rate_unit=events/second, duration_unit=seconds
+04:55:35.826 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.5477150437044813, m1=0.19981362876743025, m5=0.1371400595076393, m15=0.056144892459891335, rate_unit=events/second, duration_unit=seconds
+04:55:45.826 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=56, min=0.002461963, max=0.164889034, mean=0.008299611517857138, stddev=0.021506107211658118, median=0.003943987, p75=0.006994543, p95=0.014328437, p98=0.029216369, p99=0.164889034, p999=0.164889034, mean_rate=0.49891734294669954, m1=0.16913858513570723, m5=0.13264407357684915, m15=0.05552451325507494, rate_unit=events/second, duration_unit=seconds
+04:55:51.770 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+04:55:51.776 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+04:56:34.151 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.1.Final}
+04:56:35.104 [main] INFO  c.b.wallet.commons.HibernateUtil - Hibernate config is loaded successfully
+04:56:35.190 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+04:56:35.503 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+04:56:35.740 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+04:56:35.758 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+04:56:36.908 [main] INFO  c.b.wallet.commons.HibernateUtil - SessionFactory is created by StandardServiceRegistry
+04:56:37.201 [main] INFO  c.betpawa.wallet.server.WalletServer - Server started, listening on 8080
+04:56:46.918 [metrics-logger-reporter-1-thread-1] INFO  wallet.server - type=TIMER, name=request.delay, count=0, min=0.0, max=0.0, mean=0.0, stddev=0.0, median=0.0, p75=0.0, p95=0.0, p98=0.0, p99=0.0, p999=0.0, mean_rate=0.0, m1=0.0, m5=0.0, m15=0.0, rate_unit=events/second, duration_unit=seconds
+04:56:47.916 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+04:56:47.922 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+04:57:08.268 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 2, perUserThreads: 2, perUserRounds: 2
+04:57:08.271 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+04:57:08.559 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+04:57:09.471 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+04:57:09.582 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+04:57:09.588 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+04:57:09.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 2, failed: 0
+04:57:09.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+04:57:09.881 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 2, failed: 0
+04:57:09.881 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+04:57:09.924 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down
+05:01:03.121 [main] INFO  c.betpawa.wallet.client.WalletClient - Starting client with config, users: 2, perUserThreads: 2, perUserRounds: 2
+05:01:03.124 [main] INFO  c.betpawa.wallet.client.WalletClient - Connecting users server localhost:8080
+05:01:03.419 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-0
+05:01:04.116 [main] INFO  com.betpawa.wallet.client.WalletUser - registering userId: uid-1
+05:01:04.143 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-0
+05:01:04.144 [main] INFO  com.betpawa.wallet.client.WalletUser - Starting wallet client for userId: uid-1
+05:01:04.440 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-0 is completed, success: 2, failed: 0
+05:01:04.440 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-0 is completed
+05:01:04.452 [main] INFO  com.betpawa.wallet.client.WalletUser - Round for userId uid-1 is completed, success: 2, failed: 0
+05:01:04.452 [main] INFO  c.betpawa.wallet.client.WalletClient - User uid-1 is completed
+05:01:04.489 [main] INFO  c.betpawa.wallet.client.WalletClient - WalletClient is down

@@ -3,7 +3,6 @@ package com.betpawa.wallet.client;
 import com.betpawa.wallet.commons.*;
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Slf4jReporter;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
@@ -37,7 +36,7 @@ public class WalletClient {
     }
 
     /** Construct client for accessing Wallet server using the existing channel. */
-    WalletClient(ManagedChannel channel) {
+    public WalletClient(ManagedChannel channel) {
         this.channel = channel;
         blockingStub = WalletTransactionGrpc.newBlockingStub(channel);
     }
@@ -46,13 +45,13 @@ public class WalletClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
-    public String createAccount(String userId) {
-        NewAccount account = NewAccount.newBuilder()
+    public String registerUser(String userId) {
+        UserId user = UserId.newBuilder()
                 .setUserId(userId)
                 .build();
 
         try {
-            blockingStub.createAccount(account);
+            blockingStub.registerUser(user);
             return "ok";
         } catch (StatusRuntimeException e) {
             String msg = e.getStatus().getDescription();

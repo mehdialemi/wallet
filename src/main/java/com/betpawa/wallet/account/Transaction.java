@@ -1,6 +1,5 @@
-package com.betpawa.wallet.entities;
+package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.commons.Currency;
 import com.betpawa.wallet.commons.TransactionType;
 
 import javax.persistence.*;
@@ -13,15 +12,10 @@ public class Transaction implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
     private int id;
 
     @Column
     private double amount;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 5)
-    private Currency currency;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(columnDefinition = "smallint", nullable = false)
@@ -32,8 +26,7 @@ public class Transaction implements Serializable {
     private Date date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "balance_id", nullable = false)
-    private Balance balance;
+    private Account account;
 
     public int getId() {
         return id;
@@ -49,14 +42,6 @@ public class Transaction implements Serializable {
 
     public void setAmount(double amount) {
         this.amount = amount;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
     }
 
     public Date getDate() {
@@ -75,11 +60,11 @@ public class Transaction implements Serializable {
         this.type = type;
     }
 
-    public Balance getBalance() {
-        return balance;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setBalance(Balance balance) {
-        this.balance = balance;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

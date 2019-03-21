@@ -1,8 +1,9 @@
 package com.betpawa.wallet.commons;
 
-import com.betpawa.wallet.entities.Account;
+import com.betpawa.wallet.account.Account;
+import com.betpawa.wallet.account.AccountPK;
 import com.betpawa.wallet.entities.Balance;
-import com.betpawa.wallet.entities.Transaction;
+import com.betpawa.wallet.account.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -36,7 +37,7 @@ public class HibernateUtil {
 
                 Metadata metadata = new MetadataSources(registry)
                         .addAnnotatedClass(Account.class)
-                        .addAnnotatedClass(Balance.class)
+                        .addAnnotatedClass(AccountPK.class)
                         .addAnnotatedClass(Transaction.class)
                         .getMetadataBuilder()
                         .build();

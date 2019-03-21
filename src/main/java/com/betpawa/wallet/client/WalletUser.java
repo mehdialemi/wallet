@@ -21,14 +21,16 @@ public class WalletUser implements Closeable {
     private String userId;
     private final List <Future <Boolean>> futures = new ArrayList <>();
 
-    public WalletUser(String server, int port, String userId, int threads, int threadRounds, MetricRegistry registry) {
+    WalletUser(String server, int port, String userId, int threads, int threadRounds, MetricRegistry registry) {
         this.userId = userId;
 
         this.walletClient = new WalletClient(server, port);
+        logger.info("registering userId: {}", userId);
+        walletClient.registerUser(userId);
+
         executorService = Executors.newFixedThreadPool(threads);
         roundList = new ArrayList <>();
 
-        walletClient.createAccount(userId);
         final Timer roundOperationTimer = registry.timer("round.operation.delay");
         UserRound.setOperationTimer(roundOperationTimer);
 
@@ -46,14 +48,14 @@ public class WalletUser implements Closeable {
         return userId;
     }
 
-    public void start() throws Exception {
+    public void start() {
         logger.info("Starting wallet client for userId: {}", userId);
         for (Callable <Boolean> callable : roundList) {
             futures.add(executorService.submit(callable));
         }
     }
 
-    public void waitToComplete() throws Exception {
+    void waitToComplete() throws Exception {
         int success = 0;
         int failed = 0;
         for (Future <Boolean> future : futures) {

@@ -1,7 +1,6 @@
 package com.betpawa.wallet.commons;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.io.Closeable;
 
@@ -22,7 +21,7 @@ public class MySession implements Closeable {
      */
     public Session openSession() {
         session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction transaction = session.beginTransaction();
+        session.beginTransaction();
         return session;
     }
 

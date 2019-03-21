@@ -26,8 +26,8 @@
         <property name="hibernate.dbcp.maxIdle">100</property>
         <property name="hibernate.dbcp.minIdle">20</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
-        <!--<mapping class="com.betpawa.wallet.entities.Account" />-->
+        <!--<mapping class="com.betpawa.wallet.account.Account" />-->
         <!--<mapping class="com.betpawa.wallet.entities.Balance" />-->
-        <!--<mapping class="com.betpawa.wallet.entities.Transaction" />-->
+        <!--<mapping class="com.betpawa.wallet.account.Transaction" />-->
     </session-factory>
 </hibernate-configuration>

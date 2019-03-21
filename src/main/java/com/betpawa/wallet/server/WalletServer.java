@@ -2,7 +2,6 @@ package com.betpawa.wallet.server;
 
 import com.betpawa.wallet.commons.HibernateUtil;
 import com.betpawa.wallet.commons.WalletConfig;
-import com.betpawa.wallet.services.WalletService;
 import io.grpc.*;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;

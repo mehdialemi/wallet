@@ -1,11 +1,10 @@
-package com.betpawa.wallet.services;
+package com.betpawa.wallet.server;
 
+import com.betpawa.wallet.account.Account;
+import com.betpawa.wallet.account.AccountService;
 import com.betpawa.wallet.commons.*;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
 import com.betpawa.wallet.exceptions.UnknownCurrencyException;
-import com.betpawa.wallet.entities.Account;
-import com.betpawa.wallet.entities.Balance;
-import com.codahale.metrics.Meter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Slf4jReporter;
 import com.codahale.metrics.Timer;
@@ -15,20 +14,19 @@ import io.grpc.stub.StreamObserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBase {
     private static final Logger logger = LoggerFactory.getLogger(WalletService.class);
 
     private static final Empty EMPTY = Empty.newBuilder().build();
-    private final MetricRegistry metrics = new MetricRegistry();
     private final Timer timer;
     private AccountService accountService;
 
-    public WalletService(WalletConfig config) {
+    WalletService(WalletConfig config) {
         accountService = new AccountService();
+        MetricRegistry metrics = new MetricRegistry();
         timer = metrics.timer("request.delay");
         // load session factory at initialization
         HibernateUtil.getSessionFactory();
@@ -41,12 +39,11 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
     }
 
     @Override
-    public void createAccount(NewAccount request, StreamObserver <Empty> responseObserver) {
-        logger.trace("Create new account for userId: {}", request.getUserId());
-
+    public void registerUser(UserId request, StreamObserver <Empty> responseObserver) {
+        logger.info("Create new account for userId: {}", request.getUserId());
         Timer.Context context = timer.time();
         try {
-            accountService.newAccount(request.getUserId());
+            accountService.register(request.getUserId());
             responseObserver.onNext(EMPTY);
             responseObserver.onCompleted();
         } catch (UnknownCurrencyException e) {
@@ -91,15 +88,14 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
         logger.trace("Received balance request {}", StringUtil.toString(request));
         Timer.Context context = timer.time();
         try {
-            Account account = accountService.getAccount(request.getUserId());
-            Set<Balance> balances = account == null ? new HashSet <>() : account.getBalance();
+            List <Account> accounts = accountService.getAccount(request.getUserId());
 
             BalanceResponse.Builder balanceResponseBuilder = BalanceResponse.newBuilder();
-            for (Balance balance: balances) {
+            for (Account account: accounts) {
                 balanceResponseBuilder
                         .addResults(BalanceResult.newBuilder()
-                        .setAmount(balance.getAmount())
-                        .setCurrency(balance.getCurrency()));
+                        .setAmount(account.getAmount())
+                        .setCurrency(account.getAccountPK().getCurrency()));
             }
 
             responseObserver.onNext(balanceResponseBuilder.build());

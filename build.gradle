@@ -44,6 +44,7 @@ dependencies {
     compile "org.hibernate:hibernate-core:5.4.1.Final"
     compile "org.hibernate:hibernate-hikaricp:5.4.1.Final"
     compile "com.zaxxer:HikariCP:2.6.1"
+//    compile "com.google.guava:guava:27.1-jre"
 
     compile "io.dropwizard.metrics:metrics-core:4.0.5"
     compile "commons-cli:commons-cli:1.4"

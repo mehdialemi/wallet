@@ -1,25 +1,41 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
 option java_multiple_files = true;
-option java_package = "com.betpawa.wallet.commons";
+option java_package = "com.betpawa.wallet.proto";
 option java_outer_classname = "WalletProto";
 option objc_class_prefix = "WAL";
 
-package commons;
+package proto;
 
 // The wallet server will keep track  of a users monetary balance in the system.
 // The client will emulate users depositing and withdrawing funds.
 service WalletTransaction {
 
-    rpc registerUser (UserId) returns (Empty);
+    rpc registerUser (UserId) returns (google.protobuf.Empty);
     // Deposit funds to the users wallet.
-    rpc Deposit (DepositRequest) returns (Empty);
+    rpc Deposit (DepositRequest) returns (google.protobuf.Empty);
 
     // Withdraw funds from the users wallet.
-    rpc Withdraw (WithdrawRequest) returns (Empty);
+    rpc Withdraw (WithdrawRequest) returns (google.protobuf.Empty);
 
     // Get the users current balance.
     rpc Balance (BalanceRequest) returns (BalanceResponse);
+
+    rpc call (stream ClientRequest) returns (stream BalanceResponse);
+}
+
+message ClientRequest {
+    string userId = 1;
+    Operation op = 2;
+    double amount = 3;
+    Currency currency = 4;
+}
+
+enum Operation {
+    DEPOSIT = 0;
+    WITHDRAW = 1;
+    BALANCE = 2;
 }
 
 message UserId {
@@ -32,8 +48,6 @@ message DepositRequest {
     double amount = 2;
     Currency currency = 3;
 }
-
-message Empty {}
 
 message WithdrawRequest {
     string userId = 1;

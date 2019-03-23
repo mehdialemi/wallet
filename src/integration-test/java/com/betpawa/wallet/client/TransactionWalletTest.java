@@ -1,10 +1,10 @@
 package com.betpawa.wallet.client;
 
-import com.betpawa.wallet.commons.BalanceResponse;
-import com.betpawa.wallet.commons.BalanceResult;
-import com.betpawa.wallet.commons.Currency;
 import com.betpawa.wallet.commons.WalletConfig;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
+import com.betpawa.wallet.proto.BalanceResponse;
+import com.betpawa.wallet.proto.BalanceResult;
+import com.betpawa.wallet.proto.Currency;
 import com.betpawa.wallet.server.WalletServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -43,6 +43,7 @@ public class TransactionWalletTest {
 
         WalletClient client = new WalletClient("localhost", port);
         String userId = "1";
+        BalanceResponse balance;
 
         try {
             client.registerUser(userId);
@@ -53,7 +54,7 @@ public class TransactionWalletTest {
             msg = client.deposit(userId, 100.0, Currency.USD);
             assertEquals(OK, msg);
 
-            BalanceResponse balance = client.balance(userId);
+            balance = client.balance(userId);
             assertNotNull(balance);
             assertBalances(createBalances(100, 0, 0), balance.getResultsList());
 

@@ -1,8 +1,10 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.commons.*;
+import com.betpawa.wallet.commons.MySession;
+import com.betpawa.wallet.commons.TransactionType;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
 import com.betpawa.wallet.exceptions.UnknownCurrencyException;
+import com.betpawa.wallet.proto.Currency;
 import org.hibernate.Session;
 
 import java.util.Date;
@@ -10,36 +12,48 @@ import java.util.List;
 
 public class AccountService {
 
+    private AccountRepository accountRepository;
+    public AccountService() {
+        accountRepository = new AccountRepository();
+    }
+
     public void register(String userId) {
         validateOrThrowRunnable(userId);
 
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
-            if (AccountRepository.accountExists(session, userId))
+            if (accountRepository.accountExists(session, userId))
                 return;
 
-            session.save(Account.create(userId, Currency.USD));
-            session.save(Account.create(userId, Currency.EUR));
-            session.save(Account.create(userId, Currency.GBP));
-            session.flush();
+            createAccount(userId, session);
         }
     }
 
-    public void withdraw(WithdrawRequest request) throws InSufficientFundException {
-        validateOrThrowRunnable(request.getUserId(), request.getAmount(), request.getCurrency());
+    private void createAccount(String userId, Session session) {
+//        session.setCacheMode(CacheMode.PUT);
+        session.save(Account.create(userId, Currency.USD));
+        session.save(Account.create(userId, Currency.EUR));
+        session.save(Account.create(userId, Currency.GBP));
+    }
 
-        // First, open a new session and then begin a transaction
+    public void withdraw(String userId, double amount, Currency currency) throws InSufficientFundException {
+        validateOrThrowRunnable(userId, amount, currency);
+
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
 
-            Account account = AccountRepository.findByUserIdCurrency(session, request.getUserId(), request.getCurrency());
-            if (account == null)
+//            session.setCacheMode(CacheMode.GET);
+            Account account = accountRepository.findByUserIdCurrency(session, userId, currency);
+            if (account == null) {
+                createAccount(userId, session);
+                throw new InSufficientFundException();
+            }
+
+            if (account.getAmount() < amount)
                 throw new InSufficientFundException();
 
-            if (account.getAmount() < request.getAmount())
-                throw new InSufficientFundException();
-
-            account.decrease(request.getAmount());
+            account.decrease(amount);
+//            session.setCacheMode(CacheMode.PUT);
             session.save(account);
 
             Transaction transaction = new Transaction();
@@ -50,18 +64,25 @@ public class AccountService {
         } // Finally, commit the transaction and close the session
     }
 
-    public void deposit(DepositRequest request) {
-        validateOrThrowRunnable(request.getUserId(), request.getAmount(), request.getCurrency());
+    public void deposit(String userId, double amount, Currency currency) {
+        validateOrThrowRunnable(userId, amount, currency);
 
         // First, open a new session and then begin a transaction
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
-            Account account = AccountRepository.findByUserIdCurrency(session, request.getUserId(), request.getCurrency());
+//            session.setCacheMode(CacheMode.GET);
 
-            if (account == null)
+            Account account = accountRepository.findByUserIdCurrency(session, userId, currency);
+
+            if (account == null) {
+                createAccount(userId, session);
                 throw new InSufficientFundException();
+            }
 
-            account.increase(request.getAmount());
+
+            account.increase(amount);
+//            session.setCacheMode(CacheMode.PUT);
+
             session.save(account);
 
             Transaction transaction = new Transaction();
@@ -82,7 +103,8 @@ public class AccountService {
         // First, open a new session and then begin a transaction
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
-            return AccountRepository.findByUserId(session, userId);
+            session.setDefaultReadOnly(true);
+            return accountRepository.findByUserId(session, userId);
         } // Finally, commit the transaction and close the session
     }
 

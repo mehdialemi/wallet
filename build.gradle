@@ -33,6 +33,7 @@ version '0.1-SNAPSHOT'
 def grpcVersion = '1.19.0' // CURRENT_GRPC_VERSION
 def protobufVersion = '3.6.1'
 def protocVersion = protobufVersion
+def hibernateVersion = "5.4.2.Final"
 
 dependencies {
     compile "io.grpc:grpc-protobuf:${grpcVersion}"
@@ -41,9 +42,11 @@ dependencies {
     runtime "io.grpc:grpc-netty-shaded:${grpcVersion}"
 
     compile "mysql:mysql-connector-java:8.0.15"
-    compile "org.hibernate:hibernate-core:5.4.1.Final"
-    compile "org.hibernate:hibernate-hikaricp:5.4.1.Final"
-    compile "com.zaxxer:HikariCP:2.6.1"
+    compile "org.hibernate:hibernate-core:${hibernateVersion}"
+    compile "org.hibernate:hibernate-hikaricp:${hibernateVersion}"
+    compile "org.hibernate:hibernate-jcache:${hibernateVersion}"
+    compile "org.hibernate:hibernate-ehcache:${hibernateVersion}"
+    compile "com.zaxxer:HikariCP:3.3.1"
 //    compile "com.google.guava:guava:27.1-jre"
 
     compile "io.dropwizard.metrics:metrics-core:4.0.5"
@@ -63,7 +66,7 @@ dependencies {
 }
 
 protobuf {
-    protoc { artifact = "com.google.protobuf:protoc:${protocVersion}" }
+    protoc { artifact = "com.google.protobuf:protoc:${protocVersion}"}
     plugins {
         grpc { artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}" }
     }

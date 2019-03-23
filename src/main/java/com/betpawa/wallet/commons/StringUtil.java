@@ -1,5 +1,9 @@
 package com.betpawa.wallet.commons;
 
+import com.betpawa.wallet.proto.BalanceRequest;
+import com.betpawa.wallet.proto.DepositRequest;
+import com.betpawa.wallet.proto.WithdrawRequest;
+
 public class StringUtil {
 
     public static String toString(WithdrawRequest request) {

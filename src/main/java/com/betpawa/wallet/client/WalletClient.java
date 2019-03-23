@@ -1,11 +1,14 @@
 package com.betpawa.wallet.client;
 
-import com.betpawa.wallet.commons.*;
+import com.betpawa.wallet.commons.StringUtil;
+import com.betpawa.wallet.commons.WalletConfig;
+import com.betpawa.wallet.proto.*;
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
+import io.grpc.stub.StreamObserver;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -25,6 +28,8 @@ public class WalletClient {
 
     private final ManagedChannel channel;
     private final WalletTransactionGrpc.WalletTransactionBlockingStub blockingStub;
+    private final WalletTransactionGrpc.WalletTransactionStub asyncStub;
+    private ResultProvider resultProvider;
 
     /** Construct client connecting to Wallet server at {@code host:port}. */
     public WalletClient(String host, int port) {
@@ -39,6 +44,7 @@ public class WalletClient {
     public WalletClient(ManagedChannel channel) {
         this.channel = channel;
         blockingStub = WalletTransactionGrpc.newBlockingStub(channel);
+        asyncStub = WalletTransactionGrpc.newStub(channel);
     }
 
     public void shutdown() throws InterruptedException {
@@ -77,6 +83,41 @@ public class WalletClient {
             logger.debug(msg);
             return msg;
         }
+    }
+
+    public void sendAllRequests(List<ClientRequest> requests) {
+
+        StreamObserver<BalanceResponse> responseObserver = new StreamObserver <BalanceResponse>() {
+            @Override
+            public void onNext(BalanceResponse value) {
+                if (resultProvider != null) {
+                    resultProvider.onResponse(value);
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                if (resultProvider != null) {
+                    resultProvider.onRpcError(t);
+                }
+            }
+
+            @Override
+            public void onCompleted() {
+                logger.info("Request completed");
+            }
+        };
+
+        StreamObserver <ClientRequest> call = asyncStub.call(responseObserver);
+        try {
+            for (ClientRequest request : requests) {
+                call.onNext(request);
+            }
+        } catch (Throwable t) {
+            call.onError(t);
+        }
+
+        call.onCompleted();
     }
 
     public String withdraw(String userId, double amount, Currency currency) {
@@ -172,9 +213,11 @@ public class WalletClient {
 
             for (WalletUser walletUser : walletUsers) {
                 walletUser.waitToComplete();
-                logger.info("User {} is completed", walletUser.getUserId());
             }
 
+//            System.out.println("Enter string to exit");
+//            Scanner scanner = new Scanner(System.in);
+//            String line = scanner.nextLine();
             reporter.report();
         } finally {
             for (WalletUser walletUser : walletUsers) {
@@ -183,6 +226,22 @@ public class WalletClient {
 
             logger.info("WalletClient is down");
         }
+    }
+
+    interface ResultProvider {
+        /**
+         * Used for verify/inspect message received from server.
+         */
+        void onResponse(BalanceResponse message);
+
+        /**
+         * Used for verify/inspect error received from server.
+         */
+        void onRpcError(Throwable exception);
+    }
+
+    void setResultProvider(ResultProvider resultProvider) {
+        this.resultProvider = resultProvider;
     }
 
 }

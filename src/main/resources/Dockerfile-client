@@ -1,4 +1,0 @@
-FROM java:8-jdk-alpine
-COPY build/install/wallet/ /opt/
-EXPOSE 8080
-RUN /opt/wallet/bin/wallet-client

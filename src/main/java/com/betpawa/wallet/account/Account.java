@@ -1,6 +1,7 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.commons.Currency;
+import com.betpawa.wallet.proto.Currency;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,10 +14,9 @@ import java.util.Set;
         @NamedNativeQuery(name="find_by_user_id",
                 query = "select * from accounts where user_id=:userId",
                 resultClass = Account.class),
-        @NamedNativeQuery(name = "find_by_user_id_currency",
-                query = "select * from accounts where user_id=:userId and currency=:currency",
-                resultClass = Account.class)
 })
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
 public class Account implements Serializable {
 
     @EmbeddedId

@@ -2,17 +2,19 @@ package com.betpawa.wallet.commons;
 
 import com.betpawa.wallet.account.Account;
 import com.betpawa.wallet.account.AccountPK;
-import com.betpawa.wallet.entities.Balance;
 import com.betpawa.wallet.account.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cache.ehcache.internal.EhcacheRegionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
 
 public class HibernateUtil {
     private static final Logger logger = LoggerFactory.getLogger(HibernateUtil.class);
@@ -24,16 +26,16 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration config = new Configuration().configure();
-                config.addAnnotatedClass(Account.class);
-                config.addAnnotatedClass(Balance.class);
-                config.addAnnotatedClass(Transaction.class);
-                config.getProperties().put(Environment.SHOW_SQL, false);
-                config.getProperties().put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+                Properties properties = config.getProperties();
+                properties.put(Environment.SHOW_SQL, false);
+                properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 
-                logger.info("Hibernate config is loaded successfully");
+                properties.put(Environment.USE_SECOND_LEVEL_CACHE, true);
+                properties.put(Environment.CACHE_REGION_FACTORY, EhcacheRegionFactory.class);
+                properties.put("hibernate.cache.ehcache.missing_cache_strategy", "create");
 
                 registry = new StandardServiceRegistryBuilder()
-                        .applySettings(config.getProperties()).build();
+                        .applySettings(properties).build();
 
                 Metadata metadata = new MetadataSources(registry)
                         .addAnnotatedClass(Account.class)

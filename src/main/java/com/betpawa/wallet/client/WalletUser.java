@@ -17,9 +17,9 @@ public class WalletUser implements Closeable {
     private static final Logger logger = LoggerFactory.getLogger(WalletUser.class);
     private final WalletClient walletClient;
     private final ExecutorService executorService;
-    private final ArrayList <Callable<Boolean>> roundList;
+    private final ArrayList <Callable<Long>> roundList;
     private String userId;
-    private final List <Future <Boolean>> futures = new ArrayList <>();
+    private final List <Future <Long>> futures = new ArrayList <>();
 
     WalletUser(String server, int port, String userId, int threads, int threadRounds, MetricRegistry registry) {
         this.userId = userId;
@@ -34,12 +34,15 @@ public class WalletUser implements Closeable {
         final Timer roundOperationTimer = registry.timer("round.operation.delay");
         UserRound.setOperationTimer(roundOperationTimer);
 
+
         for (int thread = 0; thread < threads; thread++) {
             roundList.add(() -> {
+                long start = System.currentTimeMillis();
                 for (int round = 0; round < threadRounds; round++) {
                     UserRound.randomRound(walletClient, userId);
                 }
-                return true;
+                Long duration = System.currentTimeMillis() - start;
+                return duration;
             });
         }
     }
@@ -50,19 +53,18 @@ public class WalletUser implements Closeable {
 
     public void start() {
         logger.info("Starting wallet client for userId: {}", userId);
-        for (Callable <Boolean> callable : roundList) {
+        for (Callable <Long> callable : roundList) {
             futures.add(executorService.submit(callable));
         }
     }
 
     void waitToComplete() throws Exception {
-        int success = 0;
-        int failed = 0;
-        for (Future <Boolean> future : futures) {
-            if (future.get()) success ++;
-            else failed ++;
+        long sum = 0;
+        for (Future <Long> future : futures) {
+            sum += future.get();
         }
-        logger.info("Round for userId {} is completed, success: {}, failed: {}", userId, success, failed);
+        double avg = sum / (double) futures.size();
+        logger.info("Round for userId {} is completed, average response time: {}", userId, avg);
     }
 
     @Override

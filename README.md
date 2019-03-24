@@ -44,6 +44,13 @@ Here, we explain each property.
 * `client.stream.enable = true`: enable async in client (to use different threads for sending and receiving messages)
 * `client.response.store = false`: store responses in a queue in the client side. Enable this property only in the test classes.
 
+## Integration Test
+To run integration test just execute the following command
+- gradle integrationTest
+This will execute the integration test at `com.betpawa.wallet.client.TransactionWalletTest`
+By ruuning it, a wallet server instance and a wallet client with one user will be executed.
+Update mysql configuration such as mysql host, username, and passwrod in the hibernate configuration file located at `src/integration-test/resources/hibernate.cfg.xml`
+
 ## Run Server
 After successfull setup and running the applications in the prequesite section, you can simply run the server by executing the `deploy-server.sh` script
 To do this, you can find `deploy-server.sh` in the root directory of the Wallet project and run it as

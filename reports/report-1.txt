@@ -1,0 +1,23 @@
+
+db.pool = 500
+server.thread=200
+
+./build/install/wallet/bin/wallet-client -u 400 -t 4 -r 100
+
+request.delay
+             count = 1037255
+         mean rate = 5186.13 calls/second
+     1-minute rate = 6033.95 calls/second
+     5-minute rate = 2675.44 calls/second
+    15-minute rate = 1055.16 calls/second
+               min = 0.00 seconds
+               max = 0.21 seconds
+              mean = 0.03 seconds
+            stddev = 0.04 seconds
+            median = 0.02 seconds
+              75% <= 0.05 seconds
+              95% <= 0.11 seconds
+              98% <= 0.15 seconds
+              99% <= 0.16 seconds
+            99.9% <= 0.21 seconds
+

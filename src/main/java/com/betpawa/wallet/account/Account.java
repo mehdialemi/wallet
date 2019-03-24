@@ -1,6 +1,6 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.proto.Currency;
+import com.betpawa.wallet.proto.Wallet;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
@@ -28,7 +28,7 @@ public class Account implements Serializable {
     @OneToMany
     private Set<Transaction> transactions = new HashSet <>();
 
-    public static Account create(String userId, Currency currency) {
+    public static Account create(String userId, Wallet.Currency currency) {
         Account account = new Account();
         AccountPK accountPK = new AccountPK();
         accountPK.setCurrency(currency);

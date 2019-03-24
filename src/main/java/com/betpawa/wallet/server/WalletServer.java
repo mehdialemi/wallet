@@ -27,7 +27,7 @@ public class WalletServer {
     }
 
     public void start() throws IOException {
-        ExecutorService executorService = Executors.newFixedThreadPool(walletConfig.getGrpcThreads());
+        ExecutorService executorService = Executors.newFixedThreadPool(walletConfig.getServerThreads());
 
         /* The port on which the server should run */
         CompressorRegistry compressorRegistry = CompressorRegistry.getDefaultInstance();

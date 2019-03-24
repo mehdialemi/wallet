@@ -1,10 +1,9 @@
 package com.betpawa.wallet.account;
 
 import com.betpawa.wallet.commons.MySession;
-import com.betpawa.wallet.commons.TransactionType;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
 import com.betpawa.wallet.exceptions.UnknownCurrencyException;
-import com.betpawa.wallet.proto.Currency;
+import com.betpawa.wallet.proto.Wallet;
 import org.hibernate.Session;
 
 import java.util.Date;
@@ -30,19 +29,16 @@ public class AccountService {
     }
 
     private void createAccount(String userId, Session session) {
-//        session.setCacheMode(CacheMode.PUT);
-        session.save(Account.create(userId, Currency.USD));
-        session.save(Account.create(userId, Currency.EUR));
-        session.save(Account.create(userId, Currency.GBP));
+        session.save(Account.create(userId, Wallet.Currency.USD));
+        session.save(Account.create(userId, Wallet.Currency.EUR));
+        session.save(Account.create(userId, Wallet.Currency.GBP));
     }
 
-    public void withdraw(String userId, double amount, Currency currency) throws InSufficientFundException {
+    public void withdraw(String userId, double amount, Wallet.Currency currency) throws InSufficientFundException {
         validateOrThrowRunnable(userId, amount, currency);
 
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
-
-//            session.setCacheMode(CacheMode.GET);
             Account account = accountRepository.findByUserIdCurrency(session, userId, currency);
             if (account == null) {
                 createAccount(userId, session);
@@ -53,25 +49,22 @@ public class AccountService {
                 throw new InSufficientFundException();
 
             account.decrease(amount);
-//            session.setCacheMode(CacheMode.PUT);
             session.save(account);
 
             Transaction transaction = new Transaction();
             transaction.setDate(new Date());
-            transaction.setType(TransactionType.WITHDRAW);
+            transaction.setOperation(Wallet.Operation.WITHDRAW);
             transaction.setAccount(account);
             session.persist(transaction);
         } // Finally, commit the transaction and close the session
     }
 
-    public void deposit(String userId, double amount, Currency currency) {
+    public void deposit(String userId, double amount, Wallet.Currency currency) {
         validateOrThrowRunnable(userId, amount, currency);
 
         // First, open a new session and then begin a transaction
         try (MySession mySession = MySession.newSession()) {
             Session session = mySession.openSession();
-//            session.setCacheMode(CacheMode.GET);
-
             Account account = accountRepository.findByUserIdCurrency(session, userId, currency);
 
             if (account == null) {
@@ -79,15 +72,12 @@ public class AccountService {
                 throw new InSufficientFundException();
             }
 
-
             account.increase(amount);
-//            session.setCacheMode(CacheMode.PUT);
-
             session.save(account);
 
             Transaction transaction = new Transaction();
             transaction.setDate(new Date());
-            transaction.setType(TransactionType.DEPOSIT);
+            transaction.setOperation(Wallet.Operation.DEPOSIT);
             transaction.setAccount(account);
             session.persist(transaction);
         } // Finally, commit the transaction and close the session
@@ -113,14 +103,14 @@ public class AccountService {
      * Check amount > 0; otherwise throws IllegalArgumentException
      * Recognize the given currency; otherwise throws UnknownCurrencyException
      */
-    private void validateOrThrowRunnable(String userId, double amount, Currency currency) {
+    private void validateOrThrowRunnable(String userId, double amount, Wallet.Currency currency) {
         validateOrThrowRunnable(userId);
 
         if (amount < 0) {
             throw new IllegalArgumentException(String.format("Invalid deposit amount %s", amount));
         }
 
-        if (currency == Currency.UNRECOGNIZED)
+        if (currency == Wallet.Currency.UNRECOGNIZED)
             throw new UnknownCurrencyException();
 
     }

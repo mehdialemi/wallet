@@ -1,6 +1,6 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.commons.TransactionType;
+import com.betpawa.wallet.proto.Wallet;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +19,7 @@ public class Transaction implements Serializable {
 
     @Enumerated(EnumType.ORDINAL)
     @Column(columnDefinition = "smallint", nullable = false)
-    private TransactionType type;
+    private Wallet.Operation operation;
 
     @Column(name = "datetime", columnDefinition="DATETIME", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -52,12 +52,12 @@ public class Transaction implements Serializable {
         this.date = date;
     }
 
-    public TransactionType getType() {
-        return type;
+    public Wallet.Operation getOperation() {
+        return operation;
     }
 
-    public void setType(TransactionType type) {
-        this.type = type;
+    public void setOperation(Wallet.Operation operation) {
+        this.operation = operation;
     }
 
     public Account getAccount() {

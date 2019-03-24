@@ -1,6 +1,6 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.proto.Currency;
+import com.betpawa.wallet.proto.Wallet;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -18,7 +18,7 @@ class AccountRepository {
                 .list();
     }
 
-    Account findByUserIdCurrency(Session session, String userId, Currency currency) {
+    Account findByUserIdCurrency(Session session, String userId, Wallet.Currency currency) {
         return session.get(Account.class, AccountPK.createNew(userId, currency));
     }
 }

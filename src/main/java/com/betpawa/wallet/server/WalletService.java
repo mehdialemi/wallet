@@ -10,7 +10,6 @@ import com.betpawa.wallet.exceptions.UnknownCurrencyException;
 import com.betpawa.wallet.proto.*;
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Slf4jReporter;
 import com.codahale.metrics.Timer;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
@@ -29,12 +28,29 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
     private final Timer timer;
     private AccountService accountService;
 
+    public final static Wallet.Response SUCCESS = Wallet.Response
+            .newBuilder()
+            .setSuccess(true)
+            .build();
+
+    public final static Wallet.Response INSUFFICIENT_FOUND = Wallet.Response
+            .newBuilder()
+            .setSuccess(false)
+            .setMessage(InSufficientFundException.MESSAGE)
+            .build();
+
+    public final static Wallet.Response UNKNOWN_CURRENCY = Wallet.Response
+            .newBuilder()
+            .setSuccess(false)
+            .setMessage(UnknownCurrencyException.MESSAGE)
+            .build();
+
     WalletService(WalletConfig config) {
+        HibernateUtil.getSessionFactory();
         accountService = new AccountService();
+
         MetricRegistry metrics = new MetricRegistry();
         timer = metrics.timer("request.delay");
-        // load session factory at initialization
-        HibernateUtil.getSessionFactory();
         final ConsoleReporter reporter = ConsoleReporter.forRegistry(metrics)
                 .convertRatesTo(TimeUnit.SECONDS)
                 .convertDurationsTo(TimeUnit.SECONDS)
@@ -42,45 +58,19 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
         reporter.start(config.getReportPeriodSec(), TimeUnit.SECONDS);
     }
 
-    private final static BalanceResponse EMPTY_BALANCE_RESPONSE = BalanceResponse.getDefaultInstance();
+    @Override
+    public void call(Wallet.Request request, StreamObserver <Wallet.Response> responseObserver) {
+        perform(request, responseObserver);
+        responseObserver.onCompleted();
+    }
 
     @Override
-    public StreamObserver <ClientRequest> call(StreamObserver <BalanceResponse> responseObserver) {
-        return new StreamObserver<ClientRequest>() {
-
-            BalanceResponse response;
+    public StreamObserver <Wallet.Request> streamCall(StreamObserver <Wallet.Response> responseObserver) {
+        return new StreamObserver<Wallet.Request>() {
 
             @Override
-            public void onNext(ClientRequest value) {
-                try {
-                    switch (value.getOp()) {
-                        case BALANCE:
-                            List <Account> account = accountService.getAccount(value.getUserId());
-                            response = createBalanceResponse(account);
-                            responseObserver.onNext(response);
-                            break;
-
-                        case WITHDRAW:
-                            accountService.withdraw(value.getUserId(), value.getAmount(), value.getCurrency());
-                            response = EMPTY_BALANCE_RESPONSE;
-                            responseObserver.onNext(response);
-
-                            break;
-
-                        case DEPOSIT:
-                            accountService.deposit(value.getUserId(), value.getAmount(), value.getCurrency());
-                            response = EMPTY_BALANCE_RESPONSE;
-                            responseObserver.onNext(response);
-
-
-                        case UNRECOGNIZED:
-                            responseObserver.onError(
-                                    new StatusException(Status.NOT_FOUND.withDescription("unknown_currency")));
-
-                    }
-                } catch (Throwable t) {
-                    responseObserver.onError(new StatusException(Status.INTERNAL.withDescription(t.getMessage())));
-                }
+            public void onNext(Wallet.Request request) {
+                perform(request, responseObserver);
             }
 
             @Override
@@ -96,7 +86,7 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
     }
 
     @Override
-    public void registerUser(UserId request, StreamObserver <Empty> responseObserver) {
+    public void registerUser(Wallet.UserId request, StreamObserver <Empty> responseObserver) {
         logger.info("Create new account for userId: {}", request.getUserId());
         Timer.Context context = timer.time();
         try {
@@ -110,62 +100,61 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
         }
     }
 
-    @Override
-    public void deposit(DepositRequest request, StreamObserver<Empty> responseObserver) {
-        logger.trace("Received deposit request {}", StringUtil.toString(request));
+    private void perform(Wallet.Request request, StreamObserver <Wallet.Response> responseObserver) {
         Timer.Context context = timer.time();
         try {
-            accountService.deposit(request.getUserId(), request.getAmount(), request.getCurrency());
-            responseObserver.onNext(EMPTY);
-            responseObserver.onCompleted();
-        } catch (UnknownCurrencyException e) {
-            responseObserver.onError(new StatusException(Status.NOT_FOUND.withDescription(e.getMessage())));
-        } finally {
-            context.stop();
-        }
-    }
+            switch (request.getOp()) {
+                case BALANCE:
+                    logger.debug("Received balance request, userId: {}", request.getUserId());
+                    List<Account> account = accountService.getAccount(request.getUserId());
+                    responseObserver.onNext(balanceResponse(account));
+                    break;
 
-    @Override
-    public void withdraw(WithdrawRequest request, StreamObserver <Empty> responseObserver) {
-        logger.trace("Received withdraw request {}", StringUtil.toString(request));
-        Timer.Context context = timer.time();
-        try {
-            accountService.withdraw(request.getUserId(), request.getAmount(), request.getCurrency());
-            responseObserver.onNext(EMPTY);
-            responseObserver.onCompleted();
-        } catch (InSufficientFundException e) {
-            responseObserver.onError(new StatusException(Status.INTERNAL.withDescription(e.getMessage())));
-        } finally {
-            context.stop();
-        }
-    }
+                case WITHDRAW:
+                    try {
+                        logger.debug("Received withdraw request as {}", StringUtil.toString(request));
+                        accountService.withdraw(request.getUserId(), request.getAmount(), request.getCurrency());
+                        responseObserver.onNext(SUCCESS);
+                    } catch (InSufficientFundException e) {
+                        responseObserver.onNext(INSUFFICIENT_FOUND);
+                    } catch (UnknownCurrencyException e) {
+                        responseObserver.onNext(UNKNOWN_CURRENCY);
+                    }
 
-    @Override
-    public void balance(BalanceRequest request, StreamObserver <BalanceResponse> responseObserver) {
-        logger.trace("Received balance request {}", StringUtil.toString(request));
-        Timer.Context context = timer.time();
-        try {
-            List <Account> accounts = accountService.getAccount(request.getUserId());
+                    break;
 
-            BalanceResponse balanceResponse = createBalanceResponse(accounts);
+                case DEPOSIT:
+                    try {
+                        logger.debug("Received deposit request as {}", StringUtil.toString(request));
+                        accountService.deposit(request.getUserId(), request.getAmount(), request.getCurrency());
+                        responseObserver.onNext(SUCCESS);
+                    }  catch (InSufficientFundException e) {
+                        responseObserver.onNext(INSUFFICIENT_FOUND);
+                    } catch (UnknownCurrencyException e) {
+                        responseObserver.onNext(UNKNOWN_CURRENCY);
+                    }
+                    break;
 
-            responseObserver.onNext(balanceResponse);
-            responseObserver.onCompleted();
+                case UNRECOGNIZED:
+                    responseObserver.onNext(UNKNOWN_CURRENCY);
+            }
         } catch (Throwable t) {
-            responseObserver.onError(new StatusException(Status.INVALID_ARGUMENT.withDescription(t.getMessage())));
+            logger.warn("Server throws exception {}", t.getMessage());
+            responseObserver.onError(new StatusException(Status.INTERNAL.withDescription(t.getMessage())));
         } finally {
             context.stop();
         }
     }
 
-    private BalanceResponse createBalanceResponse(List<Account> accounts) {
-        BalanceResponse.Builder balanceResponseBuilder = BalanceResponse.newBuilder();
+    private Wallet.Response balanceResponse(List<Account> accounts) {
+        Wallet.Response.Builder builder = Wallet.Response.newBuilder();
+        builder.setSuccess(true);
         for (Account account: accounts) {
-            balanceResponseBuilder
-                    .addResults(BalanceResult.newBuilder()
+            builder
+                    .addResults(Wallet.BalanceResult.newBuilder()
                             .setAmount(account.getAmount())
                             .setCurrency(account.getAccountPK().getCurrency()));
         }
-        return balanceResponseBuilder.build();
+        return builder.build();
     }
 }

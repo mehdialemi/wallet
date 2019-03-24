@@ -15,9 +15,9 @@
         <property name="current_session_context_class">thread</property>
 
         <!-- dbcp connection pool configuration -->
-        <property name="hibernate.hikari.connectionTimeout">20000</property>
+        <property name="hibernate.hikari.connectionTimeout">500000</property>
         <property name="hibernate.hikari.minimumIdle">10</property>
-        <property name="hibernate.hikari.maximumPoolSize">20</property>
+        <property name="hibernate.hikari.maximumPoolSize">500</property>
         <property name="hibernate.hikari.idleTimeout">300000</property>
 
     </session-factory>

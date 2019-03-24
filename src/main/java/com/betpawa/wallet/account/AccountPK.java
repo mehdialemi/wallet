@@ -1,6 +1,6 @@
 package com.betpawa.wallet.account;
 
-import com.betpawa.wallet.proto.Currency;
+import com.betpawa.wallet.proto.Wallet;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -15,20 +15,20 @@ public class AccountPK implements Serializable {
 
     @Enumerated
     @Column(name = "currency", columnDefinition = "smallint")
-    protected Currency currency;
+    protected Wallet.Currency currency;
 
-    public static AccountPK createNew(String userId, Currency currency) {
+    static AccountPK createNew(String userId, Wallet.Currency currency) {
         AccountPK accountPK = new AccountPK();
         accountPK.userId = userId;
         accountPK.currency = currency;
         return accountPK;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(Wallet.Currency currency) {
         this.currency = currency;
     }
 
-    public Currency getCurrency() {
+    public Wallet.Currency getCurrency() {
         return currency;
     }
 
@@ -43,10 +43,10 @@ public class AccountPK implements Serializable {
     @Override
     public boolean equals(Object obj) {
         if (obj == null)
-            return super.equals(obj);
+            return false;
 
         AccountPK pk = (AccountPK) obj;
-        return userId == pk.userId && currency == pk.currency;
+        return userId.equals(pk.userId) && currency == pk.currency;
     }
 
     @Override

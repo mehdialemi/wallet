@@ -12,64 +12,45 @@ package proto;
 // The client will emulate users depositing and withdrawing funds.
 service WalletTransaction {
 
-    rpc registerUser (UserId) returns (google.protobuf.Empty);
-    // Deposit funds to the users wallet.
-    rpc Deposit (DepositRequest) returns (google.protobuf.Empty);
+    rpc registerUser (Wallet.UserId) returns (google.protobuf.Empty);
 
-    // Withdraw funds from the users wallet.
-    rpc Withdraw (WithdrawRequest) returns (google.protobuf.Empty);
+    rpc call (Wallet.Request) returns (Wallet.Response);
 
-    // Get the users current balance.
-    rpc Balance (BalanceRequest) returns (BalanceResponse);
-
-    rpc call (stream ClientRequest) returns (stream BalanceResponse);
+    rpc streamCall (stream Wallet.Request) returns (stream Wallet.Response);
 }
 
-message ClientRequest {
-    string userId = 1;
-    Operation op = 2;
-    double amount = 3;
-    Currency currency = 4;
-}
+message Wallet {
+    message Request {
+        string userId = 1;
+        Operation op = 2;
+        double amount = 3;
+        Currency currency = 4;
+    }
 
-enum Operation {
-    DEPOSIT = 0;
-    WITHDRAW = 1;
-    BALANCE = 2;
-}
+    enum Operation {
+        DEPOSIT = 0;
+        WITHDRAW = 1;
+        BALANCE = 2;
+    }
 
-message UserId {
-    string userId = 1;
-}
+    message UserId {
+        string userId = 1;
+    }
 
-// The request message containing the user's name.
-message DepositRequest {
-    string userId = 1;
-    double amount = 2;
-    Currency currency = 3;
-}
+    message Response {
+        bool success = 1;
+        string message = 2;
+        repeated BalanceResult results = 3;
+    }
 
-message WithdrawRequest {
-    string userId = 1;
-    double amount = 2;
-    Currency currency = 3;
-}
+    message BalanceResult {
+        double amount = 1;
+        Currency currency = 2;
+    }
 
-message BalanceRequest {
-    string userId = 1;
-}
-
-message BalanceResponse {
-    repeated BalanceResult results = 1;
-}
-
-message BalanceResult {
-    double amount = 1;
-    Currency currency = 2;
-}
-
-enum Currency {
-    EUR = 0;
-    USD = 1;
-    GBP = 2;
+    enum Currency {
+        EUR = 0;
+        USD = 1;
+        GBP = 2;
+    }
 }

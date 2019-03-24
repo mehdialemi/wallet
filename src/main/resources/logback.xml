@@ -29,7 +29,7 @@
         </encoder>
     </appender>
 
-    <!--<logger name="org.hibernate.type" level="DEBUG" />-->
+    <!--<logger name="org.hibernate.operation" level="DEBUG" />-->
     <!--<logger name="org.hibernate" level="DEBUG" />-->
     <!--<logger name="org.hibernate.SQL" level="DEBUG" />-->
     <!--<logger name="org.hibernate.cache" level="DEBUG" />-->

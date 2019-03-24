@@ -1,8 +1,8 @@
 package com.betpawa.wallet.client;
 
-import com.betpawa.wallet.commons.StringUtil;
 import com.betpawa.wallet.commons.WalletConfig;
-import com.betpawa.wallet.proto.*;
+import com.betpawa.wallet.proto.Wallet;
+import com.betpawa.wallet.proto.WalletTransactionGrpc;
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
 import io.grpc.ManagedChannel;
@@ -16,148 +16,135 @@ import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * A simple client that send deposit, withdraw, and balance requests to the Wallet server
  */
 public class WalletClient {
     private static final Logger logger = LoggerFactory.getLogger(WalletClient.class);
+    private static final DecimalFormat DF = new DecimalFormat("#.##");
+    public static final String ROUND_OPERATION_DELAY = "round.operation.delay";
 
     private final ManagedChannel channel;
+    private MetricRegistry metricRegistry;
     private final WalletTransactionGrpc.WalletTransactionBlockingStub blockingStub;
     private final WalletTransactionGrpc.WalletTransactionStub asyncStub;
-    private ResultProvider resultProvider;
+    private final Queue <Wallet.Response> rQueue;
+    private WalletConfig config;
+    private final AtomicInteger received = new AtomicInteger();
+    private final AtomicInteger sent = new AtomicInteger();
+    private final Semaphore semaphore = new Semaphore(0);
 
-    /** Construct client connecting to Wallet server at {@code host:port}. */
-    public WalletClient(String host, int port) {
-        this(ManagedChannelBuilder.forAddress(host, port)
+    /**
+     * Construct client connecting to Wallet server at {@code host:port}.
+     */
+    WalletClient(WalletConfig config, MetricRegistry metricRegistry) {
+        this.channel = ManagedChannelBuilder.forAddress(config.getServer(), config.getPort())
                 // Channels are secure by default (via SSL/TLS). For the wallet test task, I disable TLS
                 // to avoid needing certificates.
                 .usePlaintext()
-                .build());
+                .build();
+        this.metricRegistry = metricRegistry;
+        this.blockingStub = WalletTransactionGrpc.newBlockingStub(channel);
+        this.asyncStub = WalletTransactionGrpc.newStub(channel);
+        this.rQueue = new ConcurrentLinkedDeque <>();
+        this.config = config;
     }
 
-    /** Construct client for accessing Wallet server using the existing channel. */
-    public WalletClient(ManagedChannel channel) {
-        this.channel = channel;
-        blockingStub = WalletTransactionGrpc.newBlockingStub(channel);
-        asyncStub = WalletTransactionGrpc.newStub(channel);
+    public WalletConfig getConfig() {
+        return config;
     }
 
-    public void shutdown() throws InterruptedException {
+    void shutdown() throws InterruptedException {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
-    public String registerUser(String userId) {
-        UserId user = UserId.newBuilder()
+    void registerUser(String userId) {
+        Wallet.UserId user = Wallet.UserId.newBuilder()
                 .setUserId(userId)
                 .build();
-
         try {
             blockingStub.registerUser(user);
-            return "ok";
         } catch (StatusRuntimeException e) {
             String msg = e.getStatus().getDescription();
             logger.debug(msg);
-            return msg;
         }
     }
 
-    public String deposit(String userId, double amount, Currency currency) {
-
-        DepositRequest request = DepositRequest.newBuilder()
-                .setUserId(userId)
-                .setAmount(amount)
-                .setCurrency(currency)
-                .build();
-
-        logger.trace( "Will try to deposit {}", StringUtil.toString(request));
-        try {
-            blockingStub.deposit(request);
-            return "ok";
-        } catch (StatusRuntimeException e) {
-            String msg = e.getStatus().getDescription();
-            logger.debug(msg);
-            return msg;
+    Wallet.Response removeNextResponse() {
+        if (config.isStoreResponse()) {
+            return rQueue.remove();
         }
+        return null;
     }
 
-    public void sendAllRequests(List<ClientRequest> requests) {
+    void waitToComplete() throws Exception {
+        semaphore.acquire(sent.get());
+    }
 
-        StreamObserver<BalanceResponse> responseObserver = new StreamObserver <BalanceResponse>() {
+    int getReceivedCount() {
+        return received.get();
+    }
+
+    int getSendCount() {
+        return sent.get();
+    }
+    private double receivedRatio() {
+        return received.get() / (double) sent.get();
+    }
+
+    void sendRequests(List <Wallet.Request> requests) {
+
+        StreamObserver <Wallet.Response> responseObserver = new StreamObserver <Wallet.Response>() {
             @Override
-            public void onNext(BalanceResponse value) {
-                if (resultProvider != null) {
-                    resultProvider.onResponse(value);
+            public void onNext(Wallet.Response response) {
+                received.incrementAndGet();
+                semaphore.release();
+                if (config.isStoreResponse()) {
+                    rQueue.add(response);
                 }
             }
 
             @Override
             public void onError(Throwable t) {
-                if (resultProvider != null) {
-                    resultProvider.onRpcError(t);
-                }
+                logger.error("Error in client", t);
             }
 
             @Override
             public void onCompleted() {
-                logger.info("Request completed");
+                logger.debug("Request completed");
             }
         };
 
-        StreamObserver <ClientRequest> call = asyncStub.call(responseObserver);
+        StreamObserver <Wallet.Request> streamCall = asyncStub.streamCall(responseObserver);
         try {
-            for (ClientRequest request : requests) {
-                call.onNext(request);
+            for (Wallet.Request request : requests) {
+                if (config.isEnableStream()) {
+                    streamCall.onNext(request);
+                    sent.incrementAndGet();
+                } else {
+                    com.codahale.metrics.Timer.Context context = metricRegistry.timer(ROUND_OPERATION_DELAY).time();
+                    Wallet.Response response = blockingStub.call(request);
+                    context.stop();
+                    sent.incrementAndGet();
+                    received.incrementAndGet();
+                    if (config.isStoreResponse()) {
+                        rQueue.add(response);
+                    }
+                }
             }
         } catch (Throwable t) {
-            call.onError(t);
+            streamCall.onError(t);
         }
 
-        call.onCompleted();
-    }
-
-    public String withdraw(String userId, double amount, Currency currency) {
-        WithdrawRequest request = WithdrawRequest.newBuilder()
-                .setUserId(userId)
-                .setAmount(amount)
-                .setCurrency(currency)
-                .build();
-
-        logger.trace("Will try to withdraw {}", StringUtil.toString(request));
-        try {
-            blockingStub.withdraw(request);
-            return "ok";
-        } catch (StatusRuntimeException e) {
-            String msg = e.getStatus().getDescription();
-            logger.debug(msg);
-            return msg;
-        }
-    }
-
-    public BalanceResponse balance(String userId) {
-        BalanceRequest request = BalanceRequest.newBuilder()
-                .setUserId(userId)
-                .build();
-
-        logger.trace("Will try to get balance {}", StringUtil.toString(request));
-        try {
-            BalanceResponse response = blockingStub.balance(request);
-            StringBuilder sb = new StringBuilder("Balance: ");
-            for (BalanceResult result : response.getResultsList()) {
-                sb.append(result.getAmount())
-                        .append(" ")
-                        .append(result.getCurrency().name())
-                        .append(", ");
-            }
-            logger.trace(sb.toString());
-            return response;
-        } catch (StatusRuntimeException e) {
-            logger.debug(e.getStatus().getDescription());
-            return null;
+        if (config.isEnableStream()) {
+            streamCall.onCompleted();
         }
     }
 
@@ -187,61 +174,72 @@ public class WalletClient {
         int numRounds = Integer.valueOf(cmd.getOptionValue(optNumRounds, "1"));
 
         WalletConfig config = new WalletConfig(configFile);
-        List<WalletUser> walletUsers = new ArrayList <>();
+        final List <WalletUser> walletUsers = new ArrayList <>();
         logger.info("Starting client with config, users: {}, perUserThreads: {}, perUserRounds: {}",
                 numUsers, numThreads, numRounds);
         logger.info("Connecting users server {}:{}", config.getServer(), config.getPort());
 
         MetricRegistry metricRegistry = new MetricRegistry();
+
         ConsoleReporter reporter = ConsoleReporter.forRegistry(metricRegistry)
                 .convertRatesTo(TimeUnit.SECONDS)
                 .convertDurationsTo(TimeUnit.SECONDS)
                 .shutdownExecutorOnStop(true)
                 .build();
-        reporter.start(config.getReportPeriodSec(), TimeUnit.SECONDS);
+        if (!config.isEnableStream()) {
+            reporter.start(config.getReportPeriodSec(), TimeUnit.SECONDS);
+        }
+
+        Timer timer = new Timer();
 
         try {
             /* Access a service running on the local machine on port 50051 */
 
             for (int i = 0; i < numUsers; i++) {
-                walletUsers.add(new WalletUser(config.getServer(), config.getPort(), "uid-" + i, numThreads, numRounds, metricRegistry));
+                walletUsers.add(new WalletUser(new WalletClient(config, metricRegistry), "uid-" + i, numThreads, numRounds));
             }
 
             for (WalletUser walletUser : walletUsers) {
                 walletUser.start();
             }
 
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    double received = 0.0;
+                    int completed = 0;
+                    for (WalletUser walletUser : walletUsers) {
+                        double ratio = walletUser.getWalletClient().receivedRatio();
+                        if (ratio >= 100.0)
+                            completed++;
+                        received += ratio;
+                    }
+
+                    double ratio = received / walletUsers.size();
+                    logger.info("Users: {}, completed requests: {}, received ratio: {}"
+                            , walletUsers.size(), completed, DF.format(ratio));
+                }
+            };
+
+            timer.schedule(timerTask, 0, config.getReportPeriodSec() * 1000);
+
             for (WalletUser walletUser : walletUsers) {
                 walletUser.waitToComplete();
             }
 
-//            System.out.println("Enter string to exit");
-//            Scanner scanner = new Scanner(System.in);
-//            String line = scanner.nextLine();
-            reporter.report();
+            if (!config.isEnableStream()) {
+                reporter.report();
+            }
+
+            timerTask.run();
         } finally {
             for (WalletUser walletUser : walletUsers) {
                 walletUser.close();
             }
 
+            timer.cancel();
             logger.info("WalletClient is down");
         }
-    }
-
-    interface ResultProvider {
-        /**
-         * Used for verify/inspect message received from server.
-         */
-        void onResponse(BalanceResponse message);
-
-        /**
-         * Used for verify/inspect error received from server.
-         */
-        void onRpcError(Throwable exception);
-    }
-
-    void setResultProvider(ResultProvider resultProvider) {
-        this.resultProvider = resultProvider;
     }
 
 }

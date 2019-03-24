@@ -11,7 +11,9 @@ public class WalletConfig {
     private String server = "localhost";
     private int port = 8080;
     private int reportPeriodSec = 10;
-    private int grpcThreads = 5;
+    private int serverThreads = 5;
+    private boolean enableStream = true;
+    private boolean storeResponse = false;
 
     public WalletConfig() {
     }
@@ -21,7 +23,9 @@ public class WalletConfig {
         server = properties.getString("server.host", "localhost");
         port = properties.getInt("server.port", 80080);
         reportPeriodSec = properties.getInt("server.report.period.second", 10);
-        grpcThreads = properties.getInt("grpc.threads", 5);
+        serverThreads = properties.getInt("server.threads", 5);
+        enableStream = properties.getBoolean("client.stream.enable", true);
+        storeResponse = properties.getBoolean("client.response.store", false);
     }
 
     public String getServer() {
@@ -48,11 +52,27 @@ public class WalletConfig {
         this.reportPeriodSec = reportPeriodSec;
     }
 
-    public int getGrpcThreads() {
-        return grpcThreads;
+    public int getServerThreads() {
+        return serverThreads;
     }
 
-    public void setGrpcThreads(int grpcThreads) {
-        this.grpcThreads = grpcThreads;
+    public void setServerThreads(int serverThreads) {
+        this.serverThreads = serverThreads;
+    }
+
+    public boolean isEnableStream() {
+        return enableStream;
+    }
+
+    public void setEnableStream(boolean enableStream) {
+        this.enableStream = enableStream;
+    }
+
+    public boolean isStoreResponse() {
+        return storeResponse;
+    }
+
+    public void setStoreResponse(boolean storeResponse) {
+        this.storeResponse = storeResponse;
     }
 }

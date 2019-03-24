@@ -47,7 +47,6 @@ dependencies {
     compile "org.hibernate:hibernate-jcache:${hibernateVersion}"
     compile "org.hibernate:hibernate-ehcache:${hibernateVersion}"
     compile "com.zaxxer:HikariCP:3.3.1"
-//    compile "com.google.guava:guava:27.1-jre"
 
     compile "io.dropwizard.metrics:metrics-core:4.0.5"
     compile "commons-cli:commons-cli:1.4"
@@ -103,6 +102,7 @@ idea {
 }
 
 startScripts.enabled = false
+startScripts.defaultJvmOpts=["-Xmx2g", "-Xms1g"]
 
 task walletServer(type: CreateStartScripts) {
     mainClassName = 'com.betpawa.wallet.server.WalletServer'

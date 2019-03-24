@@ -133,6 +133,7 @@ public class WalletClient {
                     Wallet.Response response = blockingStub.call(request);
                     context.stop();
                     sent.incrementAndGet();
+                    semaphore.release();
                     received.incrementAndGet();
                     if (config.isStoreResponse()) {
                         rQueue.add(response);

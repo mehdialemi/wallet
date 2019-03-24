@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AccountService {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
     public AccountService() {
         accountRepository = new AccountRepository();
     }
@@ -100,7 +100,7 @@ public class AccountService {
 
     /**
      * Check userId is not null; otherwise throws IllegalArgumentException
-     * Check amount > 0; otherwise throws IllegalArgumentException
+     * Check amount >= 0; otherwise throws IllegalArgumentException
      * Recognize the given currency; otherwise throws UnknownCurrencyException
      */
     private void validateOrThrowRunnable(String userId, double amount, Wallet.Currency currency) {

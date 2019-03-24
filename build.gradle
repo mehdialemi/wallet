@@ -34,6 +34,7 @@ def grpcVersion = '1.19.0' // CURRENT_GRPC_VERSION
 def protobufVersion = '3.6.1'
 def protocVersion = protobufVersion
 def hibernateVersion = "5.4.2.Final"
+def heap="2g"
 
 dependencies {
     compile "io.grpc:grpc-protobuf:${grpcVersion}"
@@ -102,7 +103,7 @@ idea {
 }
 
 startScripts.enabled = false
-startScripts.defaultJvmOpts=["-Xmx2g", "-Xms1g"]
+startScripts.defaultJvmOpts=["-Xmx${heap}", "-Xms${heap}"]
 
 task walletServer(type: CreateStartScripts) {
     mainClassName = 'com.betpawa.wallet.server.WalletServer'

@@ -7,7 +7,8 @@ import com.betpawa.wallet.commons.StringUtil;
 import com.betpawa.wallet.commons.WalletConfig;
 import com.betpawa.wallet.exceptions.InSufficientFundException;
 import com.betpawa.wallet.exceptions.UnknownCurrencyException;
-import com.betpawa.wallet.proto.*;
+import com.betpawa.wallet.proto.Wallet;
+import com.betpawa.wallet.proto.WalletTransactionGrpc;
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Timer;
@@ -26,7 +27,7 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
 
     private static final Empty EMPTY = Empty.newBuilder().build();
     private final Timer timer;
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public final static Wallet.Response SUCCESS = Wallet.Response
             .newBuilder()
@@ -66,7 +67,7 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
 
     @Override
     public StreamObserver <Wallet.Request> streamCall(StreamObserver <Wallet.Response> responseObserver) {
-        return new StreamObserver<Wallet.Request>() {
+        return new StreamObserver <Wallet.Request>() {
 
             @Override
             public void onNext(Wallet.Request request) {
@@ -106,7 +107,7 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
             switch (request.getOp()) {
                 case BALANCE:
                     logger.debug("Received balance request, userId: {}", request.getUserId());
-                    List<Account> account = accountService.getAccount(request.getUserId());
+                    List <Account> account = accountService.getAccount(request.getUserId());
                     responseObserver.onNext(balanceResponse(account));
                     break;
 
@@ -128,7 +129,7 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
                         logger.debug("Received deposit request as {}", StringUtil.toString(request));
                         accountService.deposit(request.getUserId(), request.getAmount(), request.getCurrency());
                         responseObserver.onNext(SUCCESS);
-                    }  catch (InSufficientFundException e) {
+                    } catch (InSufficientFundException e) {
                         responseObserver.onNext(INSUFFICIENT_FOUND);
                     } catch (UnknownCurrencyException e) {
                         responseObserver.onNext(UNKNOWN_CURRENCY);
@@ -146,14 +147,13 @@ public class WalletService extends WalletTransactionGrpc.WalletTransactionImplBa
         }
     }
 
-    private Wallet.Response balanceResponse(List<Account> accounts) {
+    private Wallet.Response balanceResponse(List <Account> accounts) {
         Wallet.Response.Builder builder = Wallet.Response.newBuilder();
         builder.setSuccess(true);
-        for (Account account: accounts) {
-            builder
-                    .addResults(Wallet.BalanceResult.newBuilder()
-                            .setAmount(account.getAmount())
-                            .setCurrency(account.getAccountPK().getCurrency()));
+        for (Account account : accounts) {
+            builder.addResults(Wallet.BalanceResult.newBuilder()
+                    .setAmount(account.getAmount())
+                    .setCurrency(account.getAccountPK().getCurrency()));
         }
         return builder.build();
     }
